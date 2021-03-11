@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    
+This is a template ski file to be copied and changed from the shell script
+
+Parameters to be changed from bash script:
+numPackets="numPhotonsValue"
+inclination="angleValue"
+ -->
+
+<!-- A SKIRT parameter file © Astronomical Observatory, Ghent University -->
+<skirt-simulation-hierarchy type="MonteCarloSimulation" format="9" producer="SKIRT v9.0 (git 58c16ec built on 17/07/2020 at 16:38:37)" time="2020-07-23T14:19:37.790">
+    <MonteCarloSimulation userLevel="Regular" simulationMode="DustEmission" numPackets="numPhotonsValue">
+        <random type="Random">
+            <Random seed="0"/>
+        </random>
+        <units type="Units">
+            <ExtragalacticUnits fluxOutputStyle="Frequency"/>
+        </units>
+        <cosmology type="Cosmology">
+            <LocalUniverseCosmology/>
+        </cosmology>
+        <sourceSystem type="SourceSystem">
+            <SourceSystem minWavelength="0.1 micron" maxWavelength="1000 micron" wavelengths="0.55 micron" sourceBias="0.5">
+                <sources type="Source">
+                    <ParticleSource filename="radiation.txt" importVelocity="true" importVelocityDispersion="false" useColumns="" sourceWeight="1" wavelengthBias="0.5">
+                        <smoothingKernel type="SmoothingKernel">
+                            <CubicSplineSmoothingKernel/>
+                        </smoothingKernel>
+                        <sedFamily type="SEDFamily">
+                            <FSPSSEDFamily imf="Chabrier"/>
+                        </sedFamily>
+                        <wavelengthBiasDistribution type="WavelengthDistribution">
+                            <LogWavelengthDistribution minWavelength="0.0001 micron" maxWavelength="1e6 micron"/>
+                        </wavelengthBiasDistribution>
+                    </ParticleSource>
+                </sources>
+            </SourceSystem>
+        </sourceSystem>
+        <mediumSystem type="MediumSystem">
+            <MediumSystem numDensitySamples="100">
+                <photonPacketOptions type="PhotonPacketOptions">
+                    <PhotonPacketOptions minWeightReduction="1e4" minScattEvents="0" pathLengthBias="0.5"/>
+                </photonPacketOptions>
+                <dustEmissionOptions type="DustEmissionOptions">
+                    <DustEmissionOptions dustEmissionType="Equilibrium" includeHeatingByCMB="false" storeEmissionRadiationField="false" secondaryPacketsMultiplier="1" spatialBias="0.5" wavelengthBias="0.5">
+                        <cellLibrary type="SpatialCellLibrary">
+                            <AllCellsLibrary/>
+                        </cellLibrary>
+                        <radiationFieldWLG type="DisjointWavelengthGrid">
+                            <LogWavelengthGrid minWavelength="0.1 micron" maxWavelength="1000 micron" numWavelengths="250"/>
+                        </radiationFieldWLG>
+                        <dustEmissionWLG type="DisjointWavelengthGrid">
+                            <LogWavelengthGrid minWavelength="0.1 micron" maxWavelength="1000 micron" numWavelengths="250"/>
+                        </dustEmissionWLG>
+                        <wavelengthBiasDistribution type="WavelengthDistribution">
+                            <LogWavelengthDistribution minWavelength="0.0001 micron" maxWavelength="1e6 micron"/>
+                        </wavelengthBiasDistribution>
+                    </DustEmissionOptions>
+                </dustEmissionOptions>
+                <media type="Medium">
+                    <ParticleMedium filename="dust.txt" massFraction="1" importMetallicity="true" importTemperature="true" maxTemperature="0 K" importVelocity="false" importMagneticField="false" importVariableMixParams="false" useColumns="">
+                        <smoothingKernel type="SmoothingKernel">
+                            <CubicSplineSmoothingKernel/>
+                        </smoothingKernel>
+                        <materialMix type="MaterialMix">
+                            <!-- <ZubkoDustMix numSilicateSizes="5" numGraphiteSizes="5" numPAHSizes="5"/> -->
+                            <DraineLiDustMix numSilicateSizes="5" numGraphiteSizes="5" numPAHSizes="5"/>
+                        </materialMix>
+                    </ParticleMedium>
+                </media>
+                <grid type="SpatialGrid">
+                    <PolicyTreeSpatialGrid minX="-105000 pc" maxX="105000 pc" minY="-105000 pc" maxY="105000 pc" 
+minZ="-105000 pc" maxZ="105000 pc" treeType="OctTree">
+                        <policy type="TreePolicy">
+                            <DensityTreePolicy minLevel="3" maxLevel="7" maxDustFraction="1e-6" maxDustOpticalDepth="0" wavelength="0.55 micron" maxDustDensityDispersion="0" maxElectronFraction="1e-6" maxGasFraction="1e-6"/>
+                        </policy>
+                    </PolicyTreeSpatialGrid>
+                </grid>
+            </MediumSystem>
+        </mediumSystem>
+        <instrumentSystem type="InstrumentSystem">
+            <InstrumentSystem>
+                <defaultWavelengthGrid type="WavelengthGrid">
+                    <LogWavelengthGrid minWavelength="0.1 micron" maxWavelength="1000 micron" numWavelengths="250"/>
+                </defaultWavelengthGrid>
+                <instruments type="Instrument">
+                    <FullInstrument instrumentName="inc0" distance="100 Mpc" inclination="0 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc2" distance="100 Mpc" inclination="2 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc4" distance="100 Mpc" inclination="4 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc6" distance="100 Mpc" inclination="6 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc8" distance="100 Mpc" inclination="8 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc10" distance="100 Mpc" inclination="10 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc12" distance="100 Mpc" inclination="12 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc14" distance="100 Mpc" inclination="14 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc16" distance="100 Mpc" inclination="16 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc18" distance="100 Mpc" inclination="18 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc20" distance="100 Mpc" inclination="20 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc22" distance="100 Mpc" inclination="22 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc24" distance="100 Mpc" inclination="24 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc26" distance="100 Mpc" inclination="26 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc28" distance="100 Mpc" inclination="28 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc30" distance="100 Mpc" inclination="30 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc32" distance="100 Mpc" inclination="32 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc34" distance="100 Mpc" inclination="34 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc36" distance="100 Mpc" inclination="36 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc38" distance="100 Mpc" inclination="38 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc40" distance="100 Mpc" inclination="40 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc42" distance="100 Mpc" inclination="42 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc44" distance="100 Mpc" inclination="44 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc46" distance="100 Mpc" inclination="46 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc48" distance="100 Mpc" inclination="48 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc50" distance="100 Mpc" inclination="50 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc52" distance="100 Mpc" inclination="52 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc54" distance="100 Mpc" inclination="54 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc56" distance="100 Mpc" inclination="56 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc58" distance="100 Mpc" inclination="58 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc60" distance="100 Mpc" inclination="60 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc62" distance="100 Mpc" inclination="62 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc64" distance="100 Mpc" inclination="64 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc66" distance="100 Mpc" inclination="66 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc68" distance="100 Mpc" inclination="68 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc70" distance="100 Mpc" inclination="70 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc72" distance="100 Mpc" inclination="72 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc74" distance="100 Mpc" inclination="74 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc76" distance="100 Mpc" inclination="76 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc78" distance="100 Mpc" inclination="78 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc80" distance="100 Mpc" inclination="80 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc82" distance="100 Mpc" inclination="82 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc84" distance="100 Mpc" inclination="84 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc86" distance="100 Mpc" inclination="86 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc88" distance="100 Mpc" inclination="88 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="inc90" distance="100 Mpc" inclination="90 deg" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                </instruments>
+            </InstrumentSystem>
+        </instrumentSystem>
+        <probeSystem type="ProbeSystem">
+            <ProbeSystem/>
+        </probeSystem>
+    </MonteCarloSimulation>
+</skirt-simulation-hierarchy>
+
+

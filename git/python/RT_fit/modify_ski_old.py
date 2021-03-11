@@ -12,7 +12,6 @@ parser.add_argument("--inc") # inclination angle (SKIRT parameter)
 parser.add_argument("--maxLevel") # maxLevel (SKIRT parameter)
 parser.add_argument("--wavelengths") # number of wavelength bins (SKIRT parameter)
 parser.add_argument("--numPhotons") # number of photon packages (SKIRT parameter)
-parser.add_argument("--pixels") # number of pixels (square) for image (SKIRT parameter)
 args = parser.parse_args()
 
 tree = ET.parse(args.filePath)
@@ -26,8 +25,6 @@ root = tree.getroot()
 
 d = {
 	'FullInstrument/inclination' : str(args.inc)+'_deg',
-        'FullInstrument/numPixelsX' : str(args.pixels),
-        'FullInstrument/numPixelsY' : str(args.pixels),
 	'DensityTreePolicy/maxLevel' : str(args.maxLevel),
 	'MonteCarloSimulation/numPackets' : str(args.numPhotons),
 	'radiationFieldWLG/LogWavelengthGrid/numWavelengths' : str(args.wavelengths),
@@ -52,11 +49,8 @@ for name, value in d.items():
 	print(s[-1], value)
 
 	for item in root.iter(s[0]):
-		if len(s) == 2:
-			item.set(s[-1], value.replace("_", " "))
-		if len(s) == 3:
-			for sub_item in item:
-				sub_item.set(s[-1], value.replace("_", " "))
+		item.set(s[-1], value.replace("_", " "))
+
 
 tree.write(args.filePath, encoding='UTF-8', xml_declaration=True)
 

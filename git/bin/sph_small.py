@@ -1,6 +1,7 @@
-# uses old procedure for excluding dust (getting rid of all gas)
+# Main pipeline
+# Runs SKIRT on NIHAO galaxy, fits with Prospector, and analyzes the results 
 # to run, use:
-# python sph.py --name="test01" --dust="True" --inc="90" --maxLevel="7" --wavelengths="100" --numPhotons="1e6" --fitType="GSWLC1" --nwalkers="64" 
+# python sph.py --name="image_test2" --dust="False" --inc="45" --maxLevel="7" --wavelengths="100" --numPhotons="1e7" --fitType="GSWLC1" --nwalkers="64" 
 
 import argparse
 import os
@@ -27,7 +28,7 @@ args = parser.parse_args()
 
 mainPath=home+"/RT_fit/git"
 resourcePath=home+"/RT_fit/resources"
-projectPath=home+"/RT_fit/projects/"+args.name # must contain config.txt (see ski_file_reader.py)
+projectPath=home+"/RT_fit/projects/"+args.name 
 if args.dust == "True":
   SKIRTPath=home+"/RT_fit/resources/SKIRT/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/inc"+args.inc+"/dust"
 else:
@@ -50,12 +51,15 @@ else:
   # copy dust and radiation text files to SKIRT directory
   shutil.copy(resourcePath+"/NIHAO/dust.txt", SKIRTPath)
   shutil.copy(resourcePath+'/NIHAO/radiation.txt', SKIRTPath)
+
   if args.dust == "True":
     print('Including dust')
+    maxDustFraction = "1e-6" # default value
   else:
     os.system('rm '+SKIRTPath+'/dust.txt')
     os.system('touch '+SKIRTPath+'/dust.txt')
     print('Created empty dust.txt file')
+
   # move ski file to SKIRT directory
   shutil.copy2(mainPath+'/ski_files/sph.ski', SKIRTPath)
 
@@ -67,13 +71,18 @@ else:
   os.chdir(SKIRTPath)
   os.system('skirt sph.ski')
   os.system('python -m pts.do plot_seds .')
+  os.system('python -m pts.do make_images .')
 
   # delete all files except SED and .ski files
-  files_in_directory = os.listdir(SKIRTPath)
-  filtered_files = [file for file in files_in_directory if (file.endswith(".txt") or file.endswith(".pdf") or file.endswith(".fits") or file.endswith(".dat") or file.endswith(".xml") )]
-  for file in filtered_files:
-    path_to_file = os.path.join(SKIRTPath, file)
-    os.remove(path_to_file)
+  #files_in_directory = os.listdir(SKIRTPath)
+  #filtered_files = [file for file in files_in_directory if (file.endswith(".txt") or file.endswith(".pdf") or file.endswith(".fits") or file.endswith(".dat") or file.endswith(".xml") )]
+  #for file in filtered_files:
+  #  path_to_file = os.path.join(SKIRTPath, file)
+  #  os.remove(path_to_file)
+
+  # just delete radiation and dust text files
+  os.system('rm radiation.txt')
+  os.system('rm dust.txt')
 
   os.chdir(origDir)
 
@@ -89,19 +98,28 @@ print('Time to get SKIRT SED:', time_SKIRT)
 if args.fitType == 'GSWLC1':
   filter_list = 'sdss_u0,sdss_g0,sdss_r0,sdss_i0,sdss_z0,galex_FUV,galex_NUV'
 
-# handle prospector fit overwriting (notice both params.py calls)
+# handle prospector fit overwriting and dust inclusion (notice all four params_dust.py and params_no_dust.py calls)
 if os.path.exists(projectPath+'/Prospector_files/fit.h5'):
   if overwrite:
     os.remove(projectPath+'/Prospector_files/fit.h5')
     print('removed old fit.h5 file, running Prospector fit')
+
     # run Prospector fit
-    os.system('python '+mainPath+'/python/RT_fit/params.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+    if args.dust == "True":
+      os.system('python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+    else:
+      os.system('python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+  
   else:
     print('skipping Prospector fit, using existing fit.h5 file')
 else: 
+
   # run Prospector fit
-  os.system('python '+mainPath+'/python/RT_fit/params.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
-  
+  if args.dust == "True":
+    os.system('python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+  else:
+    os.system('python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+
 # run analysis
 os.system('python '+mainPath+'/python/RT_fit/analysis.py --path='+projectPath)
 

@@ -1,4 +1,5 @@
-# reads parameters from config.txt and changes .ski file
+# creates the ski file that uses many instruments for varying inclination angles
+# changes .ski file
 # begin line with 'SKIRT/' for skirt parameters
 # use a unique parent header after the '/' to point to each parameter
 # example: SKIRT/GeometricSource/scaleLength "2000 pc"
@@ -8,7 +9,6 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--filePath") # path to .ski file
-parser.add_argument("--inc") # inclination angle (SKIRT parameter)
 parser.add_argument("--maxLevel") # maxLevel (SKIRT parameter)
 parser.add_argument("--wavelengths") # number of wavelength bins (SKIRT parameter)
 parser.add_argument("--numPhotons") # number of photon packages (SKIRT parameter)
@@ -25,9 +25,8 @@ root = tree.getroot()
 # defaultWavelengthGrid/LogWavelengthGrid/numWavelengths
 
 d = {
-	'FullInstrument/inclination' : str(args.inc)+'_deg',
-        'FullInstrument/numPixelsX' : str(args.pixels),
-        'FullInstrument/numPixelsY' : str(args.pixels),
+    'FullInstrument/numPixelsX' : str(args.pixels),
+    'FullInstrument/numPixelsY' : str(args.pixels),
 	'DensityTreePolicy/maxLevel' : str(args.maxLevel),
 	'MonteCarloSimulation/numPackets' : str(args.numPhotons),
 	'radiationFieldWLG/LogWavelengthGrid/numWavelengths' : str(args.wavelengths),

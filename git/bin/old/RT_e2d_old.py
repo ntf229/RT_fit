@@ -1,6 +1,6 @@
 # Runs the radiative transfer (SKIRT) part of the pipeline and stores it in resources
 # to run, use:
-# python justRT.py --dust="False" --inc="90" --maxLevel="7" --wavelengths="100" --numPhotons="1e7" --pixels="1000"
+# python justRT.py --dust="False" --maxLevel="7" --wavelengths="100" --numPhotons="1e7" --pixels="1000"
 
 import argparse
 import os
@@ -16,7 +16,6 @@ home = expanduser("~")
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--dust") # include dust; True or False
-parser.add_argument("--inc") # inclination angle (SKIRT parameter)
 parser.add_argument("--maxLevel") # maxLevel (SKIRT parameter)
 parser.add_argument("--wavelengths") # number of wavelength bins (SKIRT parameter)
 parser.add_argument("--numPhotons") # number of photon packages (SKIRT parameter)
@@ -26,9 +25,9 @@ args = parser.parse_args()
 mainPath=home+"/RT_fit/git"
 resourcePath=home+"/RT_fit/resources"
 if args.dust == "True":
-  SKIRTPath=home+"/RT_fit/resources/SKIRT/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/inc"+args.inc+"/dust"
+  SKIRTPath=home+"/RT_fit/resources/SKIRT/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/every2deg/dust"
 else:
-  SKIRTPath=home+"/RT_fit/resources/SKIRT/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/inc"+args.inc+"/nodust"
+  SKIRTPath=home+"/RT_fit/resources/SKIRT/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"every2deg/nodust"
 
 start = timer()
 
@@ -46,18 +45,16 @@ else:
 
   if args.dust == "True":
     print('Including dust')
-    maxDustFraction = "1e-6" # default value
   else:
     os.system('rm '+SKIRTPath+'/dust.txt')
     os.system('touch '+SKIRTPath+'/dust.txt')
     print('Created empty dust.txt file')
 
   # move ski file to SKIRT directory
-  shutil.copy2(mainPath+'/ski_files/sph_bigger.ski', SKIRTPath+'/sph.ski')
+  shutil.copy2(mainPath+'/ski_files/sph_e2d.ski', SKIRTPath+'/sph.ski')
 
   # change values in newly created .ski file to argparse values
-  os.system('python '+mainPath+'/python/RT_fit/modify_ski.py --filePath='+SKIRTPath+'/sph.ski --inc='+args.inc+'\
-            --maxLevel='+args.maxLevel+' --wavelengths='+args.wavelengths+' --numPhotons='+args.numPhotons+' --pixels='+args.pixels)
+  os.system('python '+mainPath+'/python/RT_fit/modify_ski_e2d.py --filePath='+SKIRTPath+'/sph.ski --maxLevel='+args.maxLevel+' --wavelengths='+args.wavelengths+' --numPhotons='+args.numPhotons+' --pixels='+args.pixels)
 
   # go to SKIRT directory and run, then cd back
   origDir = os.getcwd()

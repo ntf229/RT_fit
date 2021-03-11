@@ -71,7 +71,8 @@ inclination="angleValue"
                     </ParticleMedium>
                 </media>
                 <grid type="SpatialGrid">
-                    <PolicyTreeSpatialGrid minX="-35000 pc" maxX="35000 pc" minY="-35000 pc" maxY="35000 pc" minZ="-35000 pc" maxZ="35000 pc" treeType="OctTree">
+                    <PolicyTreeSpatialGrid minX="-105000 pc" maxX="105000 pc" minY="-105000 pc" maxY="105000 pc" 
+minZ="-105000 pc" maxZ="105000 pc" treeType="OctTree">
                         <policy type="TreePolicy">
                             <DensityTreePolicy minLevel="3" maxLevel="7" maxDustFraction="1e-6" maxDustOpticalDepth="0" wavelength="0.55 micron" maxDustDensityDispersion="0" maxElectronFraction="1e-6" maxGasFraction="1e-6"/>
                         </policy>
@@ -85,7 +86,7 @@ inclination="angleValue"
                     <LogWavelengthGrid minWavelength="0.1 micron" maxWavelength="1000 micron" numWavelengths="250"/>
                 </defaultWavelengthGrid>
                 <instruments type="Instrument">
-                    <FullInstrument instrumentName="inst" distance="100 Mpc" inclination="angleValue" azimuth="45 deg" roll="0 deg" fieldOfViewX="7e4 pc" numPixelsX="250" centerX="0 pc" fieldOfViewY="7e4 pc" numPixelsY="250" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
+                    <FullInstrument instrumentName="i00" distance="100 Mpc" inclination="angleValue" azimuth="45 deg" roll="0 deg" fieldOfViewX="1.4e5 pc" numPixelsX="2000" centerX="0 pc" fieldOfViewY="1.4e5 pc" numPixelsY="2000" centerY="0 pc" recordComponents="false" numScatteringLevels="0" recordPolarization="false" recordStatistics="false"/>
                 </instruments>
             </InstrumentSystem>
         </instrumentSystem>

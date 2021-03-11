@@ -1,6 +1,6 @@
 # Runs the radiative transfer (SKIRT) part of the pipeline and stores it in resources
 # to run, use:
-# python justRT.py --dust="False" --inc="90" --maxLevel="7" --wavelengths="100" --numPhotons="1e7" --pixels="1000"
+# python justRT.py --dust="False" --inc="90" --maxLevel="7" --wavelengths="100" --numPhotons="1e7" 
 
 import argparse
 import os
@@ -20,7 +20,6 @@ parser.add_argument("--inc") # inclination angle (SKIRT parameter)
 parser.add_argument("--maxLevel") # maxLevel (SKIRT parameter)
 parser.add_argument("--wavelengths") # number of wavelength bins (SKIRT parameter)
 parser.add_argument("--numPhotons") # number of photon packages (SKIRT parameter)
-parser.add_argument("--pixels") # number of pixels (square) for image (SKIRT parameter)
 args = parser.parse_args()
 
 mainPath=home+"/RT_fit/git"
@@ -41,8 +40,8 @@ else:
   print('Generating SKIRT SED')
   os.system('mkdir -p '+SKIRTPath)
   # copy dust and radiation text files to SKIRT directory
-  shutil.copy(resourcePath+"/NIHAO/gas_bigger.txt", SKIRTPath+'/dust.txt')
-  shutil.copy(resourcePath+'/NIHAO/stars_bigger.txt', SKIRTPath+'/radiation.txt')
+  shutil.copy(resourcePath+"/NIHAO/dust.txt", SKIRTPath)
+  shutil.copy(resourcePath+'/NIHAO/radiation.txt', SKIRTPath)
 
   if args.dust == "True":
     print('Including dust')
@@ -53,11 +52,10 @@ else:
     print('Created empty dust.txt file')
 
   # move ski file to SKIRT directory
-  shutil.copy2(mainPath+'/ski_files/sph_bigger.ski', SKIRTPath+'/sph.ski')
+  shutil.copy2(mainPath+'/ski_files/sph.ski', SKIRTPath)
 
   # change values in newly created .ski file to argparse values
-  os.system('python '+mainPath+'/python/RT_fit/modify_ski.py --filePath='+SKIRTPath+'/sph.ski --inc='+args.inc+'\
-            --maxLevel='+args.maxLevel+' --wavelengths='+args.wavelengths+' --numPhotons='+args.numPhotons+' --pixels='+args.pixels)
+  os.system('python '+mainPath+'/python/RT_fit/modify_ski.py --filePath='+SKIRTPath+'/sph.ski --inc='+args.inc+' --maxLevel='+args.maxLevel+' --wavelengths='+args.wavelengths+' --numPhotons='+args.numPhotons)
 
   # go to SKIRT directory and run, then cd back
   origDir = os.getcwd()
@@ -73,10 +71,10 @@ else:
   #  path_to_file = os.path.join(SKIRTPath, file)
   #  os.remove(path_to_file)
 
-  # just delete the radiation and dust text files
+  # just delete radiation and dust text files
   os.system('rm radiation.txt')
   os.system('rm dust.txt')
-
+ 
   os.chdir(origDir)
 
 end = timer()
