@@ -121,9 +121,9 @@ if os.path.exists(projectPath+'/Prospector_files/fit.h5'):
 
     # run Prospector fit
     if args.dust == "True":
-      os.system('python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+      os.system('mpirun -np 4 python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
     else:
-      os.system('python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+      os.system('mpirun -np 4 python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
   
   else:
     print('skipping Prospector fit, using existing fit.h5 file')
@@ -131,9 +131,9 @@ else:
 
   # run Prospector fit
   if args.dust == "True":
-    os.system('python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+    os.system('mpirun -np 4 python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
   else:
-    os.system('python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+    os.system('mpirun -np 4 python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
 
 # run analysis
 os.system('python '+mainPath+'/python/RT_fit/analysis.py --path='+projectPath)

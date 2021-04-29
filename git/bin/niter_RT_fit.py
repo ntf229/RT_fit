@@ -26,7 +26,7 @@ parser.add_argument("--numPhotons") # number of photon packages (SKIRT parameter
 parser.add_argument("--pixels") # number of pixels (square) for image (SKIRT parameter)
 parser.add_argument("--fitType") # bands/spectra to use in Prospector fit (eg. GSWLC1)
 parser.add_argument("--nwalkers") # number of walkers to use in Prospector fit
-#parser.add_argument("--niter") # number of steps taken by each walker
+parser.add_argument("--niter") # number of steps taken by each walker
 args = parser.parse_args()
 
 #mainPath=home+"/RT_fit/git"
@@ -121,9 +121,9 @@ if os.path.exists(projectPath+'/Prospector_files/fit.h5'):
 
     # run Prospector fit
     if args.dust == "True":
-      os.system('python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+      os.system('python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list+' --niter='+args.niter)
     else:
-      os.system('python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+      os.system('python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list+' --niter='+args.niter)
   
   else:
     print('skipping Prospector fit, using existing fit.h5 file')
@@ -131,9 +131,9 @@ else:
 
   # run Prospector fit
   if args.dust == "True":
-    os.system('python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+    os.system('python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list+' --niter='+args.niter)
   else:
-    os.system('python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+    os.system('python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list+' --niter='+args.niter)
 
 # run analysis
 os.system('python '+mainPath+'/python/RT_fit/analysis.py --path='+projectPath)
@@ -147,7 +147,7 @@ f.write("wavelengths: "+args.wavelengths+"\n")
 f.write("numPhotons: "+args.numPhotons+"\n")
 f.write("fitType: "+args.fitType+"\n")
 f.write("nwalkers: "+args.nwalkers+"\n")
-#f.write("niter: "+args.niter+"\n")
+f.write("niter: "+args.niter+"\n")
 f.close()
 
 print('made it to the end of inc'+args.inc)
