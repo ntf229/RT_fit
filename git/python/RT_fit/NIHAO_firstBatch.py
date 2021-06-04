@@ -4,7 +4,11 @@
 
 # Steps:
 # 1. Find center of mass (stars/cold gas)
-# 2. Take successive shells between two radii centered around the center of mass. At each step, calculate the average density inside the shell, and the average density in the shell. Once the ratio (density_shell/density_inside) is less than ~0.2, multiply this radius by some number (maybe 1.5 or 2) and use this distance for the x,y,z cuts. The benefit of doing this is that it is a local calculation; it won’t “see” any satellites orbiting in the distance. 
+# 2. Take successive shells between two radii centered around the center of mass. 
+#    At each step, calculate the average density inside the shell, and the average density in the shell.
+#    Once the ratio (density_shell/density_inside) is less than ~0.2, multiply this radius by some number (maybe 1.5 or 2) 
+#    and use this distance for the x,y,z cuts. The benefit of doing this is that it is a local calculation; 
+#    it won’t “see” any satellites orbiting in the distance. 
 # 3. Make stars and gas text files for SKIRT
 # 4. Calculate net angular momentum vector around center of mass (stars/cold gas)
 # 5. Calculate azimuth and inclination angles that correspond to looking down the net angular momentum vector (face-on)
@@ -63,12 +67,31 @@ for i in range(len(galaxies)):
     gasIndex = [] 		
     print(full_length_gas, 'full gas')   	# indices to be deleted from data
 		
-    # Calculate center of mass in stars and gas
+    # Create arrays for cold gas
+    num_cold = 0 # number of cold gas particles
+    for j in range(len(full_mass_gas)):
+        if full_temp_gas[j] < 11000:
+            full_x_pos_cold_gas[num_cold] = full_x_pos_gas[j]
+            full_y_pos_cold_gas[num_cold] = full_y_pos_gas[j] 
+            full_z_pos_cold_gas[num_cold] = full_z_pos_gas[j] 
+            full_smooth_cold_gas[num_cold] = full_smooth_gas[j]
+            full_mass_cold_gas[num_cold] = full_mass_gas[j] 
+            full_metals_cold_gas[num_cold] = full_metals_gas[j]
+            full_temp_cold_gas[num_cold] = full_temp_gas[j] 
+            full_x_vel_cold_gas[num_cold] = full_x_vel_gas[j] 
+            full_y_vel_cold_gas[num_cold] = full_y_vel_gas[j] 
+            full_z_vel_cold_gas[num_cold] = full_z_vel_gas[j] 
+            num_cold += 1
+
+    print('Number of cold gas particles:', num_cold)
+
+    # Calculate center of mass in stars and cold gas
     x_com = 0
     y_com = 0
     z_com = 0
     total_mass_stars = sum(full_mass)
-    total_mass_gas = sum(full_mass_gas)
+    #total_mass_gas = sum(full_mass_gas)
+    total_mass_cold_gas = sum(full_mass_cold_gas)
     
     # Loop through all stars particles
     for j in range(len(full_mass)):
@@ -76,15 +99,35 @@ for i in range(len(galaxies)):
         y_com += (full_mass[j] * full_y_pos[j])
         z_com += (full_mass[j] * full_z_pos[j])
 
-    # Loop through all gas particles
-    for j in range(len(full_mass_gas)):
-        x_com += (full_mass_gas[j] * full_x_pos_gas[j])
-        y_com += (full_mass_gas[j] * full_y_pos_gas[j])
-        z_com += (full_mass_gas[j] * full_z_pos_gas[j])
+    # Loop through all cold gas particles
+    for j in range(len(full_mass_cold_gas)):
+        x_com += (full_mass_cold_gas[j] * full_x_pos_cold_gas[j])
+        y_com += (full_mass_cold_gas[j] * full_y_pos_cold_gas[j])
+        z_com += (full_mass_cold_gas[j] * full_z_pos_cold_gas[j])
 
-    x_com = x_com / (total_mass_stars + total_mass_gas)
-    y_com = y_com / (total_mass_stars + total_mass_gas)
-    z_com = z_com / (total_mass_stars + total_mass_gas)
+    x_com = x_com / (total_mass_stars + total_mass_cold_gas)
+    y_com = y_com / (total_mass_stars + total_mass_cold_gas)
+    z_com = z_com / (total_mass_stars + total_mass_cold_gas)
+
+    print(galaxies[i])
+
+    print('x range stars:', np.amin(full_x_pos), np.amax(full_x_pos))
+    print('y range stars:', np.amin(full_y_pos), np.amax(full_y_pos))
+    print('z range stars:', np.amin(full_z_pos), np.amax(full_z_pos))
+
+    print('x range cold gas:', np.amin(full_x_pos_cold_gas), np.amax(full_x_pos_cold_gas))
+    print('y range cold gas:', np.amin(full_y_pos_cold_gas), np.amax(full_y_pos_cold_gas))
+    print('z range cold gas:', np.amin(full_z_pos_cold_gas), np.amax(full_z_pos_cold_gas))
+
+    print('x com:', x_com)
+    print('y com:', y_com)
+    print('z com:', z_com)
+
+
+    # skipping angular momentum for now
+    break 
+    print('calculating angular momentum')
+
 
     # Calculate net angular momentum components around center of mass
     # L = r x p
