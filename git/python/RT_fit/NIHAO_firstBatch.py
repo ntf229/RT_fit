@@ -22,10 +22,11 @@ import pynbody
 interval = 1 # can be used to skip particles
 
 # 16 galaxies selected by hand from the NIHAO Suite
-#galaxies = ['g1.12e12','g1.92e12','g2.39e11','g2.79e12','g3.23e11','g3.49e11','g3.59e11','g3.61e11','g5.31e11','g5.36e11','g5.38e11','g5.55e11','g7.08e11','g7.44e11','g8.26e11','g8.28e11']
+galaxies = ['g1.12e12','g1.92e12','g2.39e11','g2.79e12','g3.23e11','g3.49e11','g3.59e11','g3.61e11','g5.31e11','g5.36e11','g5.38e11','g5.55e11','g7.08e11','g7.44e11','g8.26e11','g8.28e11']
 
 # two galaxies for testing
-galaxies = ["g1.12e12","g1.92e12"]
+#galaxies = ["g1.12e12","g1.92e12"]
+#galaxies = ["g1.92e12"]
 
 for i in range(len(galaxies)):
     
@@ -68,21 +69,25 @@ for i in range(len(galaxies)):
     print(full_length_gas, 'full gas')   	# indices to be deleted from data
 		
     # Create arrays for cold gas
+    
     num_cold = 0 # number of cold gas particles
+    cold_ind = [] # indices of gas particles corresponding to cold gas
     for j in range(len(full_mass_gas)):
-        if full_temp_gas[j] < 11000:
-            full_x_pos_cold_gas[num_cold] = full_x_pos_gas[j]
-            full_y_pos_cold_gas[num_cold] = full_y_pos_gas[j] 
-            full_z_pos_cold_gas[num_cold] = full_z_pos_gas[j] 
-            full_smooth_cold_gas[num_cold] = full_smooth_gas[j]
-            full_mass_cold_gas[num_cold] = full_mass_gas[j] 
-            full_metals_cold_gas[num_cold] = full_metals_gas[j]
-            full_temp_cold_gas[num_cold] = full_temp_gas[j] 
-            full_x_vel_cold_gas[num_cold] = full_x_vel_gas[j] 
-            full_y_vel_cold_gas[num_cold] = full_y_vel_gas[j] 
-            full_z_vel_cold_gas[num_cold] = full_z_vel_gas[j] 
+        if full_temp_gas[j] > 11000:
+            cold_ind.append(j) # indices to delete from gas 
             num_cold += 1
 
+    full_x_pos_cold_gas = np.float32(np.delete(full_x_pos_gas,cold_ind))
+    full_y_pos_cold_gas = np.float32(np.delete(full_y_pos_gas,cold_ind))
+    full_z_pos_cold_gas = np.float32(np.delete(full_z_pos_gas,cold_ind))
+    full_smooth_cold_gas = np.float32(np.delete(full_smooth_gas,cold_ind))
+    full_mass_cold_gas = np.float32(np.delete(full_mass_gas,cold_ind))
+    full_metals_cold_gas = np.float32(np.delete(full_metals_gas,cold_ind))
+    full_temp_cold_gas = np.float32(np.delete(full_temp_gas,cold_ind))
+    full_x_vel_cold_gas = np.float32(np.delete(full_x_vel_gas,cold_ind))
+    full_y_vel_cold_gas = np.float32(np.delete(full_y_vel_gas,cold_ind))
+    full_z_vel_cold_gas = np.float32(np.delete(full_z_vel_gas,cold_ind))
+    
     print('Number of cold gas particles:', num_cold)
 
     # Calculate center of mass in stars and cold gas
@@ -123,9 +128,51 @@ for i in range(len(galaxies)):
     print('y com:', y_com)
     print('z com:', z_com)
 
+    # make new array of radius from com for each particle 
+    star_radius = np.sqrt( (full_x_pos - x_com)**2 + (full_y_pos - y_com)**2 + (full_z_pos - z_com)**2 )
+    gas_radius = np.sqrt( (full_x_pos_cold_gas - x_com)**2 + (full_y_pos_cold_gas - y_com)**2 + (full_z_pos_cold_gas - z_com)**2 )
+
+    # function to check densities 
+    def density(r1, r2, star_mass, gas_mass, star_radius, gas_radius):
+        volume_interior = 4/3 * np.pi * r1**3
+        volume_shell = (4/3 * np.pi * r2**3) - volume_interior 
+        mass_interior = 0
+        mass_shell = 0
+        
+        for j in range(len(star_mass)):
+            if star_radius[j] < r1:
+                mass_interior += star_mass[j] 
+            elif (star_radius[j] >= r1) and (star_radius[j] < r2):
+                mass_shell += star_mass[j]
+        for j in range(len(gas_mass)):
+            if gas_radius[j] < r1:
+                mass_interior += gas_mass[j]
+            elif (gas_radius[j] >= r1) and (gas_radius[j] < r2):
+                mass_shell += gas_mass[j]
+                
+        density_interior = mass_interior / volume_interior
+        density_shell = mass_shell / volume_shell
+
+        return density_interior, density_shell
+
+    num_radii = 250 # number of radii to compute densities at
+    radius_buffer = 25 # number of radius shells to skip at the beginning
+    max_radius_stars = np.amax(star_radius)
+    max_radius_gas = np.amax(gas_radius)
+    max_radius = np.amax([max_radius_stars,max_radius_gas])
+    print('Maximum radius from com:', max_radius)
+    print('Density ratios (shell/interior):')
+    for j in range(num_radii-radius_buffer):
+        r1 = max_radius / (num_radii - j - radius_buffer + 1) 
+        r2 = max_radius / (num_radii - j - radius_buffer)
+        density_interior, density_shell = density(r1, r2, full_mass, full_mass_cold_gas, star_radius, gas_radius)
+        print('Loop', j, density_shell / density_interior)
+        if (density_shell / density_interior) < 0.2:
+            print('ratio is less than 0.2')
+            break
 
     # skipping angular momentum for now
-    break 
+    continue 
     print('calculating angular momentum')
 
 

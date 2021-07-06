@@ -1,0 +1,1210 @@
+/home/ntf229/RT_fit/git/python/RT_fit/NIHAO_firstBatch.py:169: RuntimeWarning: invalid value encountered in double_scalars
+  print('Loop', j, density_shell / density_interior)
+/home/ntf229/RT_fit/git/python/RT_fit/NIHAO_firstBatch.py:170: RuntimeWarning: invalid value encountered in double_scalars
+  if (density_shell / density_interior) < 0.2:
+/home/ntf229/RT_fit/git/python/RT_fit/NIHAO_firstBatch.py:169: RuntimeWarning: divide by zero encountered in double_scalars
+  print('Loop', j, density_shell / density_interior)
+/home/ntf229/RT_fit/git/python/RT_fit/NIHAO_firstBatch.py:170: RuntimeWarning: divide by zero encountered in double_scalars
+  if (density_shell / density_interior) < 0.2:
+Units of temperature: K
+1259964 full star
+1782624 full gas
+Number of cold gas particles: 1594961
+g1.12e12
+x range stars: -4190506.5 -652344.44
+y range stars: -1485618.5 1960797.8
+z range stars: -1702827.6 534120.06
+x range cold gas: -9735304.0 3455906.8
+y range cold gas: -5190239.5 5687824.0
+z range cold gas: -4061572.2 4181193.5
+x com: -1922658.289247487
+y com: 309465.89811050403
+z com: -495240.35814016004
+Maximum radius from com: 7819473.0
+Density ratios (shell/interior):
+Loop 0 1.9478517946813314
+Loop 1 3.1497594570209495
+Loop 2 1.8049022995418027
+Loop 3 0.0
+ratio is less than 0.2
+Units of temperature: K
+2473028 full star
+1989667 full gas
+Number of cold gas particles: 1715913
+g1.92e12
+x range stars: 4454675.5 7690948.0
+y range stars: 321973.5 5111228.0
+z range stars: -4311870.0 -2244688.2
+x range cold gas: 419002.12 10821721.0
+y range cold gas: -3157514.2 8289558.0
+z range cold gas: -7372041.5 1526049.4
+x com: 6002715.453540376
+y com: 3315192.6985026444
+z com: -3073337.4669731865
+Maximum radius from com: 7772576.5
+Density ratios (shell/interior):
+Loop 0 1.9649382139329965
+Loop 1 0.0
+ratio is less than 0.2
+Units of temperature: K
+701803 full star
+3172310 full gas
+Number of cold gas particles: 2208634
+g2.39e11
+x range stars: -4122010.2 -1700495.9
+y range stars: 1325809.2 2922881.2
+z range stars: -3813420.8 595936.56
+x range cold gas: -7158373.5 -305650.03
+y range cold gas: -537721.4 5426925.5
+z range cold gas: -4742712.0 2442100.2
+x com: -3524913.302717644
+y com: 2174666.983589769
+z com: -1313377.5741653992
+Maximum radius from com: 5093100.0
+Density ratios (shell/interior):
+Loop 0 nan
+Loop 1 nan
+Loop 2 nan
+Loop 3 nan
+Loop 4 nan
+Loop 5 nan
+Loop 6 nan
+Loop 7 nan
+Loop 8 nan
+Loop 9 nan
+Loop 10 nan
+Loop 11 nan
+Loop 12 nan
+Loop 13 nan
+Loop 14 nan
+Loop 15 nan
+Loop 16 nan
+Loop 17 nan
+Loop 18 nan
+Loop 19 nan
+Loop 20 nan
+Loop 21 nan
+Loop 22 nan
+Loop 23 nan
+Loop 24 nan
+Loop 25 nan
+Loop 26 nan
+Loop 27 nan
+Loop 28 nan
+Loop 29 nan
+Loop 30 nan
+Loop 31 nan
+Loop 32 nan
+Loop 33 nan
+Loop 34 nan
+Loop 35 nan
+Loop 36 nan
+Loop 37 nan
+Loop 38 nan
+Loop 39 nan
+Loop 40 nan
+Loop 41 nan
+Loop 42 nan
+Loop 43 nan
+Loop 44 nan
+Loop 45 nan
+Loop 46 nan
+Loop 47 nan
+Loop 48 nan
+Loop 49 nan
+Loop 50 nan
+Loop 51 nan
+Loop 52 nan
+Loop 53 nan
+Loop 54 nan
+Loop 55 nan
+Loop 56 nan
+Loop 57 nan
+Loop 58 nan
+Loop 59 nan
+Loop 60 nan
+Loop 61 nan
+Loop 62 nan
+Loop 63 nan
+Loop 64 nan
+Loop 65 nan
+Loop 66 nan
+Loop 67 nan
+Loop 68 nan
+Loop 69 nan
+Loop 70 nan
+Loop 71 nan
+Loop 72 nan
+Loop 73 nan
+Loop 74 nan
+Loop 75 nan
+Loop 76 nan
+Loop 77 nan
+Loop 78 nan
+Loop 79 nan
+Loop 80 nan
+Loop 81 nan
+Loop 82 nan
+Loop 83 nan
+Loop 84 nan
+Loop 85 nan
+Loop 86 nan
+Loop 87 nan
+Loop 88 nan
+Loop 89 nan
+Loop 90 nan
+Loop 91 nan
+Loop 92 nan
+Loop 93 nan
+Loop 94 nan
+Loop 95 nan
+Loop 96 nan
+Loop 97 nan
+Loop 98 nan
+Loop 99 nan
+Loop 100 nan
+Loop 101 nan
+Loop 102 nan
+Loop 103 nan
+Loop 104 nan
+Loop 105 nan
+Loop 106 nan
+Loop 107 nan
+Loop 108 nan
+Loop 109 nan
+Loop 110 nan
+Loop 111 nan
+Loop 112 nan
+Loop 113 nan
+Loop 114 nan
+Loop 115 nan
+Loop 116 nan
+Loop 117 nan
+Loop 118 nan
+Loop 119 nan
+Loop 120 nan
+Loop 121 nan
+Loop 122 nan
+Loop 123 nan
+Loop 124 nan
+Loop 125 nan
+Loop 126 nan
+Loop 127 nan
+Loop 128 nan
+Loop 129 nan
+Loop 130 nan
+Loop 131 nan
+Loop 132 nan
+Loop 133 nan
+Loop 134 nan
+Loop 135 nan
+Loop 136 nan
+Loop 137 nan
+Loop 138 nan
+Loop 139 nan
+Loop 140 nan
+Loop 141 nan
+Loop 142 nan
+Loop 143 nan
+Loop 144 nan
+Loop 145 nan
+Loop 146 nan
+Loop 147 nan
+Loop 148 nan
+Loop 149 nan
+Loop 150 nan
+Loop 151 nan
+Loop 152 nan
+Loop 153 nan
+Loop 154 nan
+Loop 155 nan
+Loop 156 nan
+Loop 157 nan
+Loop 158 nan
+Loop 159 nan
+Loop 160 nan
+Loop 161 nan
+Loop 162 nan
+Loop 163 nan
+Loop 164 nan
+Loop 165 nan
+Loop 166 nan
+Loop 167 nan
+Loop 168 nan
+Loop 169 nan
+Loop 170 nan
+Loop 171 nan
+Loop 172 nan
+Loop 173 nan
+Loop 174 nan
+Loop 175 nan
+Loop 176 nan
+Loop 177 nan
+Loop 178 nan
+Loop 179 nan
+Loop 180 nan
+Loop 181 nan
+Loop 182 nan
+Loop 183 nan
+Loop 184 nan
+Loop 185 nan
+Loop 186 nan
+Loop 187 nan
+Loop 188 nan
+Loop 189 nan
+Loop 190 nan
+Loop 191 nan
+Loop 192 nan
+Loop 193 nan
+Loop 194 nan
+Loop 195 nan
+Loop 196 nan
+Loop 197 nan
+Loop 198 nan
+Loop 199 nan
+Loop 200 nan
+Loop 201 nan
+Loop 202 nan
+Loop 203 inf
+Loop 204 14.279490189534108
+Loop 205 3.45827102907989
+Loop 206 2.6510010660082846
+Loop 207 2.7068480746268597
+Loop 208 1.7727196130798217
+Loop 209 5.0773466201498865
+Loop 210 3.7796743826980634
+Loop 211 38.14764269733877
+Loop 212 1218.435996020914
+Loop 213 0.06450983781544832
+ratio is less than 0.2
+Units of temperature: K
+3154288 full star
+4457844 full gas
+Number of cold gas particles: 3971528
+g2.79e12
+x range stars: -11406899.0 -6035131.0
+y range stars: -9134918.0 -2792870.2
+z range stars: -195623.45 6619071.0
+x range cold gas: -15118242.0 -2507837.8
+y range cold gas: -12142256.0 838313.9
+z range cold gas: -3834471.0 10050832.0
+x com: -9328445.97043605
+y com: -5542472.10389893
+z com: 4362990.635410729
+Maximum radius from com: 9612454.0
+Density ratios (shell/interior):
+Loop 0 0.17607239309651962
+ratio is less than 0.2
+Units of temperature: K
+63365 full star
+2173271 full gas
+Number of cold gas particles: 1540320
+g3.23e11
+x range stars: 7312955.0 9635515.0
+y range stars: -1906279.8 -819777.6
+z range stars: 6335419.5 8347044.5
+x range cold gas: 2753543.8 15146278.0
+y range cold gas: -4160844.0 889945.94
+z range cold gas: 3827234.8 10047255.0
+x com: 8395443.660445603
+y com: -1294810.2650667606
+z com: 7270402.304230987
+Maximum radius from com: 6835066.5
+Density ratios (shell/interior):
+Loop 0 nan
+Loop 1 nan
+Loop 2 nan
+Loop 3 nan
+Loop 4 nan
+Loop 5 nan
+Loop 6 nan
+Loop 7 nan
+Loop 8 nan
+Loop 9 nan
+Loop 10 nan
+Loop 11 nan
+Loop 12 nan
+Loop 13 nan
+Loop 14 nan
+Loop 15 nan
+Loop 16 nan
+Loop 17 nan
+Loop 18 nan
+Loop 19 nan
+Loop 20 nan
+Loop 21 nan
+Loop 22 nan
+Loop 23 nan
+Loop 24 nan
+Loop 25 nan
+Loop 26 nan
+Loop 27 nan
+Loop 28 nan
+Loop 29 nan
+Loop 30 nan
+Loop 31 nan
+Loop 32 nan
+Loop 33 nan
+Loop 34 nan
+Loop 35 nan
+Loop 36 nan
+Loop 37 nan
+Loop 38 nan
+Loop 39 nan
+Loop 40 nan
+Loop 41 nan
+Loop 42 nan
+Loop 43 nan
+Loop 44 nan
+Loop 45 nan
+Loop 46 nan
+Loop 47 nan
+Loop 48 nan
+Loop 49 nan
+Loop 50 nan
+Loop 51 nan
+Loop 52 nan
+Loop 53 nan
+Loop 54 nan
+Loop 55 nan
+Loop 56 nan
+Loop 57 nan
+Loop 58 nan
+Loop 59 nan
+Loop 60 nan
+Loop 61 nan
+Loop 62 nan
+Loop 63 nan
+Loop 64 nan
+Loop 65 nan
+Loop 66 nan
+Loop 67 nan
+Loop 68 nan
+Loop 69 nan
+Loop 70 nan
+Loop 71 nan
+Loop 72 nan
+Loop 73 nan
+Loop 74 nan
+Loop 75 nan
+Loop 76 nan
+Loop 77 nan
+Loop 78 nan
+Loop 79 nan
+Loop 80 nan
+Loop 81 nan
+Loop 82 nan
+Loop 83 nan
+Loop 84 nan
+Loop 85 nan
+Loop 86 nan
+Loop 87 nan
+Loop 88 nan
+Loop 89 nan
+Loop 90 nan
+Loop 91 nan
+Loop 92 nan
+Loop 93 nan
+Loop 94 nan
+Loop 95 nan
+Loop 96 nan
+Loop 97 nan
+Loop 98 nan
+Loop 99 nan
+Loop 100 nan
+Loop 101 nan
+Loop 102 nan
+Loop 103 nan
+Loop 104 nan
+Loop 105 nan
+Loop 106 nan
+Loop 107 nan
+Loop 108 nan
+Loop 109 nan
+Loop 110 nan
+Loop 111 nan
+Loop 112 nan
+Loop 113 nan
+Loop 114 nan
+Loop 115 nan
+Loop 116 nan
+Loop 117 nan
+Loop 118 nan
+Loop 119 nan
+Loop 120 nan
+Loop 121 nan
+Loop 122 nan
+Loop 123 nan
+Loop 124 nan
+Loop 125 nan
+Loop 126 nan
+Loop 127 nan
+Loop 128 nan
+Loop 129 nan
+Loop 130 nan
+Loop 131 nan
+Loop 132 nan
+Loop 133 nan
+Loop 134 nan
+Loop 135 nan
+Loop 136 nan
+Loop 137 nan
+Loop 138 nan
+Loop 139 nan
+Loop 140 nan
+Loop 141 nan
+Loop 142 nan
+Loop 143 nan
+Loop 144 nan
+Loop 145 nan
+Loop 146 nan
+Loop 147 nan
+Loop 148 nan
+Loop 149 nan
+Loop 150 nan
+Loop 151 nan
+Loop 152 nan
+Loop 153 nan
+Loop 154 nan
+Loop 155 nan
+Loop 156 nan
+Loop 157 nan
+Loop 158 nan
+Loop 159 nan
+Loop 160 inf
+Loop 161 20.31874801795927
+Loop 162 0.0
+ratio is less than 0.2
+Units of temperature: K
+594378 full star
+5414258 full gas
+Number of cold gas particles: 4407995
+g3.49e11
+x range stars: -8358495.0 -6181817.5
+y range stars: -5238660.5 -2220646.8
+z range stars: 5783070.0 8260943.5
+x range cold gas: -11977296.0 -4269579.0
+y range cold gas: -8720849.0 1024715.6
+z range cold gas: 3479934.2 9556929.0
+x com: -7646219.674021653
+y com: -3815140.046905798
+z com: 7010702.35963778
+Maximum radius from com: 5349278.5
+Density ratios (shell/interior):
+Loop 0 0.0
+ratio is less than 0.2
+Units of temperature: K
+566033 full star
+5834483 full gas
+Number of cold gas particles: 4284648
+g3.59e11
+x range stars: 3455745.5 6365726.0
+y range stars: 4592437.0 6831971.5
+z range stars: 1987362.9 5357835.5
+x range cold gas: 671964.7 9475506.0
+y range cold gas: 2252737.8 10407937.0
+z range cold gas: -432292.1 9474556.0
+x com: 5364305.141902082
+y com: 5605942.085462257
+z com: 4121959.805189649
+Maximum radius from com: 7869636.0
+Density ratios (shell/interior):
+Loop 0 nan
+Loop 1 nan
+Loop 2 nan
+Loop 3 nan
+Loop 4 nan
+Loop 5 nan
+Loop 6 nan
+Loop 7 nan
+Loop 8 nan
+Loop 9 nan
+Loop 10 nan
+Loop 11 nan
+Loop 12 nan
+Loop 13 nan
+Loop 14 nan
+Loop 15 nan
+Loop 16 nan
+Loop 17 nan
+Loop 18 nan
+Loop 19 nan
+Loop 20 nan
+Loop 21 nan
+Loop 22 nan
+Loop 23 nan
+Loop 24 nan
+Loop 25 nan
+Loop 26 nan
+Loop 27 nan
+Loop 28 nan
+Loop 29 nan
+Loop 30 nan
+Loop 31 nan
+Loop 32 nan
+Loop 33 nan
+Loop 34 nan
+Loop 35 nan
+Loop 36 nan
+Loop 37 nan
+Loop 38 nan
+Loop 39 nan
+Loop 40 nan
+Loop 41 nan
+Loop 42 nan
+Loop 43 nan
+Loop 44 nan
+Loop 45 nan
+Loop 46 nan
+Loop 47 nan
+Loop 48 nan
+Loop 49 nan
+Loop 50 nan
+Loop 51 nan
+Loop 52 nan
+Loop 53 nan
+Loop 54 nan
+Loop 55 nan
+Loop 56 nan
+Loop 57 nan
+Loop 58 nan
+Loop 59 nan
+Loop 60 nan
+Loop 61 nan
+Loop 62 nan
+Loop 63 nan
+Loop 64 nan
+Loop 65 nan
+Loop 66 nan
+Loop 67 nan
+Loop 68 nan
+Loop 69 nan
+Loop 70 nan
+Loop 71 nan
+Loop 72 nan
+Loop 73 nan
+Loop 74 nan
+Loop 75 nan
+Loop 76 nan
+Loop 77 nan
+Loop 78 nan
+Loop 79 nan
+Loop 80 nan
+Loop 81 nan
+Loop 82 nan
+Loop 83 nan
+Loop 84 nan
+Loop 85 nan
+Loop 86 nan
+Loop 87 nan
+Loop 88 nan
+Loop 89 nan
+Loop 90 nan
+Loop 91 nan
+Loop 92 nan
+Loop 93 nan
+Loop 94 nan
+Loop 95 nan
+Loop 96 nan
+Loop 97 nan
+Loop 98 nan
+Loop 99 nan
+Loop 100 nan
+Loop 101 nan
+Loop 102 nan
+Loop 103 nan
+Loop 104 nan
+Loop 105 nan
+Loop 106 nan
+Loop 107 nan
+Loop 108 nan
+Loop 109 nan
+Loop 110 nan
+Loop 111 nan
+Loop 112 nan
+Loop 113 nan
+Loop 114 nan
+Loop 115 nan
+Loop 116 nan
+Loop 117 nan
+Loop 118 nan
+Loop 119 nan
+Loop 120 nan
+Loop 121 nan
+Loop 122 nan
+Loop 123 nan
+Loop 124 nan
+Loop 125 nan
+Loop 126 nan
+Loop 127 nan
+Loop 128 nan
+Loop 129 nan
+Loop 130 nan
+Loop 131 nan
+Loop 132 nan
+Loop 133 nan
+Loop 134 nan
+Loop 135 nan
+Loop 136 nan
+Loop 137 nan
+Loop 138 nan
+Loop 139 nan
+Loop 140 nan
+Loop 141 nan
+Loop 142 nan
+Loop 143 nan
+Loop 144 nan
+Loop 145 nan
+Loop 146 nan
+Loop 147 nan
+Loop 148 nan
+Loop 149 nan
+Loop 150 nan
+Loop 151 nan
+Loop 152 nan
+Loop 153 nan
+Loop 154 nan
+Loop 155 nan
+Loop 156 nan
+Loop 157 nan
+Loop 158 nan
+Loop 159 nan
+Loop 160 nan
+Loop 161 nan
+Loop 162 nan
+Loop 163 nan
+Loop 164 nan
+Loop 165 nan
+Loop 166 nan
+Loop 167 nan
+Loop 168 nan
+Loop 169 nan
+Loop 170 nan
+Loop 171 nan
+Loop 172 nan
+Loop 173 nan
+Loop 174 nan
+Loop 175 nan
+Loop 176 nan
+Loop 177 nan
+Loop 178 nan
+Loop 179 nan
+Loop 180 nan
+Loop 181 inf
+Loop 182 42.015322922251855
+Loop 183 0.0
+ratio is less than 0.2
+Units of temperature: K
+2701678 full star
+3269082 full gas
+Number of cold gas particles: 2332747
+g3.61e11
+x range stars: 6281059.5 9300359.0
+y range stars: -1223815.5 -393747.5
+z range stars: 6695701.0 7908927.5
+x range cold gas: 3512540.0 12759741.0
+y range cold gas: -3785082.2 2080983.0
+z range cold gas: 2035426.0 11223500.0
+x com: 8122847.9260988785
+y com: -928381.7423634143
+z com: 7667550.357419416
+Maximum radius from com: 6767896.5
+Density ratios (shell/interior):
+Loop 0 0.0
+ratio is less than 0.2
+Units of temperature: K
+828243 full star
+13614763 full gas
+Number of cold gas particles: 12665605
+g5.31e11
+x range stars: -390773.78 5417207.5
+y range stars: 892246.75 2736582.5
+z range stars: 7348307.5 13467879.0
+x range cold gas: -4337346.0 11409423.0
+y range cold gas: -6604189.0 6411936.0
+z range cold gas: 2970018.5 16567200.0
+x com: 2530859.719668102
+y com: 1589564.6459735748
+z com: 9445890.683777038
+Maximum radius from com: 10632025.0
+Density ratios (shell/interior):
+Loop 0 nan
+Loop 1 nan
+Loop 2 nan
+Loop 3 nan
+Loop 4 nan
+Loop 5 nan
+Loop 6 nan
+Loop 7 nan
+Loop 8 nan
+Loop 9 nan
+Loop 10 nan
+Loop 11 nan
+Loop 12 nan
+Loop 13 nan
+Loop 14 nan
+Loop 15 nan
+Loop 16 nan
+Loop 17 nan
+Loop 18 nan
+Loop 19 nan
+Loop 20 nan
+Loop 21 nan
+Loop 22 nan
+Loop 23 nan
+Loop 24 nan
+Loop 25 nan
+Loop 26 nan
+Loop 27 nan
+Loop 28 nan
+Loop 29 nan
+Loop 30 nan
+Loop 31 inf
+Loop 32 64.02131724268105
+Loop 33 61.999369764127515
+Loop 34 16.047376903463626
+Loop 35 0.0
+ratio is less than 0.2
+Units of temperature: K
+460694 full star
+8290920 full gas
+Number of cold gas particles: 6858771
+g5.36e11
+x range stars: -5912944.0 -2812783.5
+y range stars: -8273359.5 -6325491.0
+z range stars: 455782.8 3622212.2
+x range cold gas: -9791667.0 2225898.0
+y range cold gas: -11623890.0 2001002.5
+z range cold gas: -4119474.2 14018549.0
+x com: -4910398.8170909695
+y com: -7201725.043855896
+z com: 2304932.5923040095
+Maximum radius from com: 14146702.0
+Density ratios (shell/interior):
+Loop 0 0.0
+ratio is less than 0.2
+Units of temperature: K
+655351 full star
+5845008 full gas
+Number of cold gas particles: 4527651
+g5.38e11
+x range stars: -10746777.0 -8863073.0
+y range stars: -5012396.0 -1351073.5
+z range stars: 7961973.0 10852761.0
+x range cold gas: -13909643.0 -3836376.2
+y range cold gas: -8808796.0 1909830.4
+z range cold gas: 4634962.5 14083877.0
+x com: -9706930.366787001
+y com: -3457291.0465635024
+z com: 8428915.72298513
+Maximum radius from com: 6981354.0
+Density ratios (shell/interior):
+Loop 0 nan
+Loop 1 nan
+Loop 2 nan
+Loop 3 nan
+Loop 4 nan
+Loop 5 nan
+Loop 6 nan
+Loop 7 nan
+Loop 8 nan
+Loop 9 nan
+Loop 10 nan
+Loop 11 nan
+Loop 12 nan
+Loop 13 nan
+Loop 14 nan
+Loop 15 nan
+Loop 16 nan
+Loop 17 nan
+Loop 18 nan
+Loop 19 inf
+Loop 20 136.13302726300861
+Loop 21 0.0
+ratio is less than 0.2
+Units of temperature: K
+2152397 full star
+6411120 full gas
+Number of cold gas particles: 5406727
+g5.55e11
+x range stars: -3616585.0 -715137.06
+y range stars: 2394585.8 5000464.0
+z range stars: -3911696.5 -1134132.0
+x range cold gas: -6579033.5 4968478.0
+y range cold gas: -884485.4 10192993.0
+z range cold gas: -6427791.5 2709314.0
+x com: -1894798.489890313
+y com: 3890023.914694148
+z com: -2371499.53641662
+Maximum radius from com: 9331115.0
+Density ratios (shell/interior):
+Loop 0 nan
+Loop 1 nan
+Loop 2 nan
+Loop 3 nan
+Loop 4 nan
+Loop 5 nan
+Loop 6 nan
+Loop 7 nan
+Loop 8 nan
+Loop 9 nan
+Loop 10 nan
+Loop 11 nan
+Loop 12 nan
+Loop 13 nan
+Loop 14 nan
+Loop 15 nan
+Loop 16 nan
+Loop 17 nan
+Loop 18 nan
+Loop 19 nan
+Loop 20 nan
+Loop 21 nan
+Loop 22 nan
+Loop 23 nan
+Loop 24 nan
+Loop 25 nan
+Loop 26 nan
+Loop 27 nan
+Loop 28 nan
+Loop 29 nan
+Loop 30 nan
+Loop 31 nan
+Loop 32 nan
+Loop 33 nan
+Loop 34 nan
+Loop 35 nan
+Loop 36 nan
+Loop 37 nan
+Loop 38 nan
+Loop 39 nan
+Loop 40 nan
+Loop 41 nan
+Loop 42 nan
+Loop 43 nan
+Loop 44 nan
+Loop 45 nan
+Loop 46 nan
+Loop 47 nan
+Loop 48 nan
+Loop 49 nan
+Loop 50 nan
+Loop 51 nan
+Loop 52 nan
+Loop 53 nan
+Loop 54 nan
+Loop 55 nan
+Loop 56 nan
+Loop 57 nan
+Loop 58 nan
+Loop 59 nan
+Loop 60 nan
+Loop 61 nan
+Loop 62 nan
+Loop 63 nan
+Loop 64 nan
+Loop 65 nan
+Loop 66 nan
+Loop 67 nan
+Loop 68 nan
+Loop 69 nan
+Loop 70 nan
+Loop 71 nan
+Loop 72 nan
+Loop 73 nan
+Loop 74 nan
+Loop 75 nan
+Loop 76 nan
+Loop 77 nan
+Loop 78 nan
+Loop 79 nan
+Loop 80 nan
+Loop 81 nan
+Loop 82 nan
+Loop 83 nan
+Loop 84 nan
+Loop 85 nan
+Loop 86 nan
+Loop 87 nan
+Loop 88 nan
+Loop 89 nan
+Loop 90 nan
+Loop 91 nan
+Loop 92 nan
+Loop 93 nan
+Loop 94 nan
+Loop 95 nan
+Loop 96 nan
+Loop 97 nan
+Loop 98 nan
+Loop 99 nan
+Loop 100 nan
+Loop 101 nan
+Loop 102 nan
+Loop 103 nan
+Loop 104 nan
+Loop 105 nan
+Loop 106 nan
+Loop 107 nan
+Loop 108 nan
+Loop 109 nan
+Loop 110 nan
+Loop 111 nan
+Loop 112 nan
+Loop 113 nan
+Loop 114 nan
+Loop 115 nan
+Loop 116 nan
+Loop 117 nan
+Loop 118 nan
+Loop 119 nan
+Loop 120 nan
+Loop 121 nan
+Loop 122 nan
+Loop 123 nan
+Loop 124 nan
+Loop 125 nan
+Loop 126 nan
+Loop 127 nan
+Loop 128 nan
+Loop 129 nan
+Loop 130 nan
+Loop 131 nan
+Loop 132 nan
+Loop 133 nan
+Loop 134 nan
+Loop 135 nan
+Loop 136 nan
+Loop 137 nan
+Loop 138 nan
+Loop 139 nan
+Loop 140 nan
+Loop 141 nan
+Loop 142 nan
+Loop 143 nan
+Loop 144 nan
+Loop 145 nan
+Loop 146 nan
+Loop 147 nan
+Loop 148 nan
+Loop 149 nan
+Loop 150 nan
+Loop 151 nan
+Loop 152 nan
+Loop 153 nan
+Loop 154 nan
+Loop 155 nan
+Loop 156 nan
+Loop 157 nan
+Loop 158 nan
+Loop 159 nan
+Loop 160 nan
+Loop 161 nan
+Loop 162 nan
+Loop 163 nan
+Loop 164 nan
+Loop 165 nan
+Loop 166 nan
+Loop 167 nan
+Loop 168 nan
+Loop 169 nan
+Loop 170 nan
+Loop 171 nan
+Loop 172 nan
+Loop 173 nan
+Loop 174 inf
+Loop 175 0.0
+ratio is less than 0.2
+Units of temperature: K
+490400 full star
+1299879 full gas
+Number of cold gas particles: 1058496
+g7.08e11
+x range stars: -53579.53 4519579.5
+y range stars: -3256385.0 413381.22
+z range stars: 3771171.5 6614695.0
+x range cold gas: -2405554.8 8162154.0
+y range cold gas: -11533459.0 3921121.8
+z range cold gas: 1530769.9 9359333.0
+x com: 2958979.5923478035
+y com: -1815341.2873324472
+z com: 4852293.30636129
+Maximum radius from com: 9802959.0
+Density ratios (shell/interior):
+Loop 0 nan
+Loop 1 nan
+Loop 2 nan
+Loop 3 nan
+Loop 4 nan
+Loop 5 nan
+Loop 6 nan
+Loop 7 nan
+Loop 8 nan
+Loop 9 nan
+Loop 10 nan
+Loop 11 nan
+Loop 12 nan
+Loop 13 nan
+Loop 14 nan
+Loop 15 nan
+Loop 16 nan
+Loop 17 nan
+Loop 18 nan
+Loop 19 nan
+Loop 20 nan
+Loop 21 nan
+Loop 22 nan
+Loop 23 nan
+Loop 24 nan
+Loop 25 nan
+Loop 26 nan
+Loop 27 nan
+Loop 28 nan
+Loop 29 nan
+Loop 30 nan
+Loop 31 nan
+Loop 32 nan
+Loop 33 nan
+Loop 34 nan
+Loop 35 nan
+Loop 36 nan
+Loop 37 nan
+Loop 38 nan
+Loop 39 nan
+Loop 40 nan
+Loop 41 nan
+Loop 42 nan
+Loop 43 nan
+Loop 44 nan
+Loop 45 nan
+Loop 46 nan
+Loop 47 nan
+Loop 48 nan
+Loop 49 nan
+Loop 50 nan
+Loop 51 nan
+Loop 52 nan
+Loop 53 nan
+Loop 54 nan
+Loop 55 nan
+Loop 56 nan
+Loop 57 nan
+Loop 58 nan
+Loop 59 nan
+Loop 60 nan
+Loop 61 nan
+Loop 62 nan
+Loop 63 nan
+Loop 64 nan
+Loop 65 nan
+Loop 66 nan
+Loop 67 nan
+Loop 68 nan
+Loop 69 nan
+Loop 70 nan
+Loop 71 nan
+Loop 72 nan
+Loop 73 nan
+Loop 74 nan
+Loop 75 nan
+Loop 76 nan
+Loop 77 nan
+Loop 78 nan
+Loop 79 nan
+Loop 80 nan
+Loop 81 nan
+Loop 82 nan
+Loop 83 nan
+Loop 84 nan
+Loop 85 nan
+Loop 86 nan
+Loop 87 nan
+Loop 88 nan
+Loop 89 nan
+Loop 90 nan
+Loop 91 nan
+Loop 92 nan
+Loop 93 nan
+Loop 94 nan
+Loop 95 nan
+Loop 96 nan
+Loop 97 nan
+Loop 98 nan
+Loop 99 nan
+Loop 100 nan
+Loop 101 nan
+Loop 102 nan
+Loop 103 nan
+Loop 104 nan
+Loop 105 nan
+Loop 106 nan
+Loop 107 nan
+Loop 108 nan
+Loop 109 nan
+Loop 110 nan
+Loop 111 nan
+Loop 112 nan
+Loop 113 nan
+Loop 114 nan
+Loop 115 nan
+Loop 116 nan
+Loop 117 nan
+Loop 118 inf
+Loop 119 0.0
+ratio is less than 0.2
+Units of temperature: K
+288631 full star
+1434574 full gas
+Number of cold gas particles: 1041315
+g7.44e11
+x range stars: -3070144.0 -358177.16
+y range stars: -3762330.5 -1444075.6
+z range stars: -1376090.4 2472863.5
+x range cold gas: -5770321.5 3400144.2
+y range cold gas: -7433258.0 1685500.5
+z range cold gas: -4571733.5 4662633.5
+x com: -1426646.1177358257
+y com: -2990376.417531691
+z com: 411200.04755824915
+Maximum radius from com: 6884781.0
+Density ratios (shell/interior):
+Loop 0 1.686705888064746
+Loop 1 3.8613277675205753
+Loop 2 0.0
+ratio is less than 0.2
+Units of temperature: K
+744870 full star
+1370570 full gas
+Number of cold gas particles: 1069513
+g8.26e11
+x range stars: -8313105.0 -2837555.5
+y range stars: -6112948.0 -3297176.5
+z range stars: -135015.12 5816554.0
+x range cold gas: -11484145.0 -157480.52
+y range cold gas: -10153863.0 -1900248.1
+z range cold gas: -3303434.8 9266137.0
+x com: -6476919.644427049
+y com: -5038008.280716808
+z com: 3159736.7642060434
+Maximum radius from com: 7940204.5
+Density ratios (shell/interior):
+Loop 0 0.0
+ratio is less than 0.2
+Units of temperature: K
+280056 full star
+1433422 full gas
+Number of cold gas particles: 1052775
+g8.28e11
+x range stars: -2204535.5 -276311.56
+y range stars: -3437231.5 -1301798.2
+z range stars: -1538978.4 2092158.5
+x range cold gas: -5694208.0 3970614.8
+y range cold gas: -6410874.5 1384134.5
+z range cold gas: -4974639.0 4491952.0
+x com: -1355806.0810499187
+y com: -2881411.29778251
+z com: 189985.32443744692
+Maximum radius from com: 6644034.5
+Density ratios (shell/interior):
+Loop 0 0.14509457820483598
+ratio is less than 0.2

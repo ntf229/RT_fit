@@ -1,6 +1,6 @@
-# Runs SKIRT on NIHAO galaxy, fits with Prospector, and analyzes the results 
+# Runs SKIRT on a specific NIHAO galaxy, fits with Prospector, and analyzes the results 
 # to run, use:
-# python RT_fit.py --dust="False" --inc="45" --maxLevel="7" --wavelengths="100" --numPhotons="1e7" --pixels="1000" --fitType="GSWLC1" --nwalkers="64" 
+# python RT_fit.py --dust="True" --inc="0" --maxLevel="7" --wavelengths="100" --numPhotons="1e7" --pixels="1000" --fitType="GSWLC1" --nwalkers="64" --niter="4096" --galaxy="g1.12e12" 
 
 import argparse
 import os
@@ -9,10 +9,13 @@ from os.path import expanduser
 from timeit import default_timer as timer
 import subprocess
 import datetime
+import numpy as np
+import sys
 
 print('The code has started')
 
-overwrite = False # if set to True, then delete existing fit.h5 file and fit again
+fitBool = True # if set to True, run Prospector fit and analysis 
+overwrite = True # if set to True, then delete existing fit.h5 file and fit again
 
 #home = expanduser("~")
 home = "/scratch/ntf229"
@@ -26,20 +29,21 @@ parser.add_argument("--numPhotons") # number of photon packages (SKIRT parameter
 parser.add_argument("--pixels") # number of pixels (square) for image (SKIRT parameter)
 parser.add_argument("--fitType") # bands/spectra to use in Prospector fit (eg. GSWLC1)
 parser.add_argument("--nwalkers") # number of walkers to use in Prospector fit
-#parser.add_argument("--niter") # number of steps taken by each walker
+parser.add_argument("--niter") # number of steps taken by each walker
+parser.add_argument("--galaxy") # name of galaxy 
 args = parser.parse_args()
 
 #mainPath=home+"/RT_fit/git"
 mainPath=expanduser("~")+"/RT_fit/git"
 #resourcePath=home+"/RT_fit/resources"
-resourcePath=expanduser("~")+"/RT_fit/resources"
+resourcePath=home+"/RT_fit/resources/NIHAO/TextFiles/"+args.galaxy
 #projectPath=home+"/RT_fit/projects/"+args.name 
 if args.dust == "True":
-  SKIRTPath=home+"/RT_fit/resources/SKIRT/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/inc"+args.inc+"/dust"
-  projectPath = home+"/RT_fit/projects/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/inc"+args.inc+"/dust/"+args.fitType+"/walkers"+args.nwalkers  
+  SKIRTPath=home+"/RT_fit/resources/SKIRT/"+args.galaxy+"/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/niter"+args.niter+"/inc"+args.inc+"/dust"
+  projectPath = home+"/RT_fit/projects/"+args.galaxy+"/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/niter"+args.niter+"/inc"+args.inc+"/dust/"+args.fitType+"/walkers"+args.nwalkers  
 else:
-  SKIRTPath=home+"/RT_fit/resources/SKIRT/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/inc"+args.inc+"/nodust"
-  projectPath = home+"/RT_fit/projects/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/inc"+args.inc+"/dust/"+args.fitType+"/walkers"+args.nwalkers
+  SKIRTPath=home+"/RT_fit/resources/SKIRT/"+args.galaxy+"/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/niter"+args.niter+"/inc"+args.inc+"/nodust"
+  projectPath = home+"/RT_fit/projects/"+args.galaxy+"/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/niter"+args.niter+"/inc"+args.inc+"/dust/"+args.fitType+"/walkers"+args.nwalkers
 # create filter_list array from --fitType codename (format: sdss_u0,sdss_g0,sdss_r0,sdss_i0,sdss_z0,galex_FUV,galex_NUV)
 
 if args.fitType == 'GSWLC1':
@@ -69,21 +73,37 @@ else:
   print('Generating SKIRT SED')
   os.system('mkdir -p '+SKIRTPath)
   # copy dust and radiation text files to SKIRT directory
-  shutil.copy(resourcePath+"/NIHAO/gas_bigger.txt", SKIRTPath+'/dust.txt')
-  shutil.copy(resourcePath+'/NIHAO/stars_bigger.txt', SKIRTPath+'/radiation.txt')
+  shutil.copy(resourcePath+'/gas.txt', SKIRTPath+'/gas.txt')
+  shutil.copy(resourcePath+'/stars.txt', SKIRTPath+'/stars.txt')
 
   if args.dust == "True":
     print('Including dust')
   else:
-    os.system('rm '+SKIRTPath+'/dust.txt')
-    os.system('touch '+SKIRTPath+'/dust.txt')
+    os.system('rm '+SKIRTPath+'/gas.txt')
+    os.system('touch '+SKIRTPath+'/gas.txt')
     print('Created empty dust.txt file')
 
   # move ski file to SKIRT directory
-  shutil.copy2(mainPath+'/ski_files/sph_bigger.ski', SKIRTPath+'/sph.ski')
+  shutil.copy2(mainPath+'/ski_files/template.ski', SKIRTPath+'/sph.ski')
+
+  # calculate size of galaxy image from text files
+  gas = np.loadtxt(SKIRTPath+'/gas.txt')
+  stars = np.loadtxt(SKIRTPath+'/stars.txt')
+
+  xLengthGas = (np.amax(gas[:,0]) - np.amin(gas[:,0]))/2
+  yLengthGas = (np.amax(gas[:,1]) - np.amin(gas[:,1]))/2
+  zLengthGas = (np.amax(gas[:,2]) - np.amin(gas[:,2]))/2
+
+  xLengthStars = (np.amax(stars[:,0]) - np.amin(stars[:,0]))/2
+  yLengthStars = (np.amax(stars[:,1]) - np.amin(stars[:,1]))/2
+  zLengthStars = (np.amax(stars[:,2]) - np.amin(stars[:,2]))/2
+
+  maxLength = np.amax([xLengthGas, yLengthGas, zLengthGas, xLengthStars, yLengthStars, zLengthStars])
+
+  print('maxLength:', maxLength)
 
   # change values in newly created .ski file to argparse values
-  os.system('python '+mainPath+'/python/RT_fit/modify_ski.py --filePath='+SKIRTPath+'/sph.ski --inc='+args.inc+' --maxLevel='+args.maxLevel+' --wavelengths='+args.wavelengths+' --numPhotons='+args.numPhotons+' --pixels='+args.pixels)
+  os.system('python '+mainPath+'/python/RT_fit/modify_template_ski.py --filePath='+SKIRTPath+'/sph.ski --inc='+args.inc+' --maxLevel='+args.maxLevel+' --wavelengths='+args.wavelengths+' --numPhotons='+args.numPhotons+' --pixels='+args.pixels+' --size='+str(maxLength/3))
 
   # go to SKIRT directory and run, then cd back
   origDir = os.getcwd()
@@ -100,13 +120,19 @@ else:
   #  os.remove(path_to_file)
 
   # just delete radiation and dust text files
-  os.system('rm radiation.txt')
-  os.system('rm dust.txt')
+  os.system('rm stars.txt')
+  os.system('rm gas.txt')
 
-  os.chdir(origDir)
+if fitBool:
+  print('starting fit')
+else:
+  print('skipping fit')
+  sys.exit()
+  
+os.chdir(origDir)
 
-  shutil.copy2(SKIRTPath+'/spec.npy', projectPath+'/Prospector_files')
-  shutil.copy2(SKIRTPath+'/wave.npy', projectPath+'/Prospector_files')
+shutil.copy2(SKIRTPath+'/spec.npy', projectPath+'/Prospector_files')
+shutil.copy2(SKIRTPath+'/wave.npy', projectPath+'/Prospector_files')
 
 end = timer()
 time_SKIRT = end - start
@@ -121,9 +147,9 @@ if os.path.exists(projectPath+'/Prospector_files/fit.h5'):
 
     # run Prospector fit
     if args.dust == "True":
-      os.system('python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+      os.system('python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list+' --niter='+args.niter)
     else:
-      os.system('python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+      os.system('python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list+' --niter='+args.niter)
   
   else:
     print('skipping Prospector fit, using existing fit.h5 file')
@@ -131,9 +157,9 @@ else:
 
   # run Prospector fit
   if args.dust == "True":
-    os.system('python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+    os.system('python '+mainPath+'/python/RT_fit/params_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list+' --niter='+args.niter)
   else:
-    os.system('python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list)
+    os.system('python '+mainPath+'/python/RT_fit/params_no_dust.py --emcee --nwalkers='+args.nwalkers+' --path='+projectPath+' --filters='+filter_list+' --niter='+args.niter)
 
 # run analysis
 os.system('python '+mainPath+'/python/RT_fit/analysis.py --path='+projectPath)
@@ -147,7 +173,8 @@ f.write("wavelengths: "+args.wavelengths+"\n")
 f.write("numPhotons: "+args.numPhotons+"\n")
 f.write("fitType: "+args.fitType+"\n")
 f.write("nwalkers: "+args.nwalkers+"\n")
-#f.write("niter: "+args.niter+"\n")
+f.write("niter: "+args.niter+"\n")
+f.write("galaxy: "+args.galaxy+"\n")
 f.close()
 
 print('made it to the end of inc'+args.inc)

@@ -1,0 +1,416 @@
+split: ['FullInstrument', 'inclination']
+length: 2
+inclination 0_deg
+split: ['FullInstrument', 'numPixelsX']
+length: 2
+numPixelsX 2000
+split: ['FullInstrument', 'numPixelsY']
+length: 2
+numPixelsY 2000
+split: ['DensityTreePolicy', 'maxLevel']
+length: 2
+maxLevel 11
+split: ['MonteCarloSimulation', 'numPackets']
+length: 2
+numPackets 1e8
+split: ['radiationFieldWLG', 'LogWavelengthGrid', 'numWavelengths']
+length: 3
+numWavelengths 250
+split: ['dustEmissionWLG', 'LogWavelengthGrid', 'numWavelengths']
+length: 3
+numWavelengths 250
+split: ['defaultWavelengthGrid', 'LogWavelengthGrid', 'numWavelengths']
+length: 3
+numWavelengths 250
+split: ['PolicyTreeSpatialGrid', 'minX']
+length: 2
+minX -26662.848958333332_pc
+split: ['PolicyTreeSpatialGrid', 'maxX']
+length: 2
+maxX 26662.848958333332_pc
+split: ['PolicyTreeSpatialGrid', 'minY']
+length: 2
+minY -26662.848958333332_pc
+split: ['PolicyTreeSpatialGrid', 'maxY']
+length: 2
+maxY 26662.848958333332_pc
+split: ['PolicyTreeSpatialGrid', 'minZ']
+length: 2
+minZ -26662.848958333332_pc
+split: ['PolicyTreeSpatialGrid', 'maxZ']
+length: 2
+maxZ 26662.848958333332_pc
+split: ['FullInstrument', 'fieldOfViewX']
+length: 2
+fieldOfViewX 35550.465277777774_pc
+split: ['FullInstrument', 'fieldOfViewY']
+length: 2
+fieldOfViewY 35550.465277777774_pc
+20/06/2021 09:40:23.749   Welcome to SKIRT v9.0 (git 57736d1 built on 03/02/2021 at 14:00:01)
+20/06/2021 09:40:23.749   Running on cs234.nyu.cluster for ntf229
+20/06/2021 09:40:23.749   Constructing a simulation from ski file 'sph.ski'...
+20/06/2021 09:40:23.771   Starting simulation sph using 40 threads and a single process...
+20/06/2021 09:40:23.771   Starting setup...
+20/06/2021 09:40:23.771     Panchromatic wavelength regime
+20/06/2021 09:40:23.771     With transfer medium
+20/06/2021 09:40:23.771     Including dust emission
+20/06/2021 09:40:23.772     Model and grid symmetry: 3D
+20/06/2021 09:40:23.772   FSPSSEDFamily opened stored table /ext3/SKIRT/resources/SKIRT9_Resources_Core/SED/FSPSSEDFamily_Chabrier.stab
+20/06/2021 09:40:23.772   ParticleSource reads smoothed source particles from text file /scratch/ntf229/RT_fit/resources/SKIRT/g3.61e11/maxLevel11/wavelengths250/numPhotons1e8/niter2048/inc0/dust/stars.txt...
+20/06/2021 09:40:23.777     Column 1: position x (pc)
+20/06/2021 09:40:23.777     Column 2: position y (pc)
+20/06/2021 09:40:23.777     Column 3: position z (pc)
+20/06/2021 09:40:23.777     Column 4: size h (pc)
+20/06/2021 09:40:23.777     Column 5: velocity x (km/s)
+20/06/2021 09:40:23.777     Column 6: velocity y (km/s)
+20/06/2021 09:40:23.777     Column 7: velocity z (km/s)
+20/06/2021 09:40:23.777     Column 8: initial mass (Msun)
+20/06/2021 09:40:23.777     Column 9: metallicity (1)
+20/06/2021 09:40:23.777     Column 10: age (yr)
+20/06/2021 09:40:38.067   Done reading
+20/06/2021 09:40:38.067     Number of particles: 2697620
+20/06/2021 09:40:38.077   Calculating luminosities for 2697620 imported entities...
+20/06/2021 09:40:50.821   Calculated luminosities: 0.3%
+20/06/2021 09:41:03.999   Calculated luminosities: 12.8%
+20/06/2021 09:41:17.240   Calculated luminosities: 25.3%
+20/06/2021 09:41:30.557   Calculated luminosities: 37.8%
+20/06/2021 09:41:43.843   Calculated luminosities: 50.3%
+20/06/2021 09:41:57.122   Calculated luminosities: 62.8%
+20/06/2021 09:42:10.415   Calculated luminosities: 75.3%
+20/06/2021 09:42:23.744   Calculated luminosities: 87.8%
+20/06/2021 09:42:24.356   DraineLiDustMix opened stored table /ext3/SKIRT/resources/SKIRT9_Resources_Core/OpticalProps/DustEM_aSil_OpticalProps.stab
+20/06/2021 09:42:25.361   DraineLiDustMix opened stored table /ext3/SKIRT/resources/SKIRT9_Resources_Core/OpticalProps/DustEM_Gra_OpticalProps.stab
+20/06/2021 09:42:26.921   DraineLiDustMix opened stored table /ext3/SKIRT/resources/SKIRT9_Resources_Core/OpticalProps/DustEM_PAH0_DL07_OpticalProps.stab
+20/06/2021 09:42:27.047   DraineLiDustMix opened stored table /ext3/SKIRT/resources/SKIRT9_Resources_Core/OpticalProps/DustEM_PAH1_DL07_OpticalProps.stab
+20/06/2021 09:42:27.182   DraineLiDustMix opened stored table /ext3/SKIRT/resources/SKIRT9_Resources_Core/OpticalProps/DustEM_aSil_OpticalProps.stab
+20/06/2021 09:42:27.278   DraineLiDustMix opened stored table /ext3/SKIRT/resources/SKIRT9_Resources_Core/OpticalProps/DustEM_Gra_OpticalProps.stab
+20/06/2021 09:42:27.446   DraineLiDustMix opened stored table /ext3/SKIRT/resources/SKIRT9_Resources_Core/OpticalProps/DustEM_PAH0_DL07_OpticalProps.stab
+20/06/2021 09:42:27.498   DraineLiDustMix opened stored table /ext3/SKIRT/resources/SKIRT9_Resources_Core/OpticalProps/DustEM_PAH1_DL07_OpticalProps.stab
+20/06/2021 09:42:27.549   DraineLiDustMix allocated 483 KB of memory
+20/06/2021 09:42:27.550   ParticleMedium reads smoothed particles from text file /scratch/ntf229/RT_fit/resources/SKIRT/g3.61e11/maxLevel11/wavelengths250/numPhotons1e8/niter2048/inc0/dust/gas.txt...
+20/06/2021 09:42:27.555     Column 1: position x (pc)
+20/06/2021 09:42:27.555     Column 2: position y (pc)
+20/06/2021 09:42:27.555     Column 3: position z (pc)
+20/06/2021 09:42:27.555     Column 4: size h (pc)
+20/06/2021 09:42:27.555     Column 5: mass (Msun)
+20/06/2021 09:42:27.555     Column 6: metallicity (1)
+20/06/2021 09:42:27.555     Column 7: temperature (K)
+20/06/2021 09:42:29.473   Done reading
+20/06/2021 09:42:29.473     Number of particles: 494624
+20/06/2021 09:42:29.496     Total original mass : 1.7494e+10 Msun
+20/06/2021 09:42:29.496     Total metallic mass : 2.9009e+08 Msun
+20/06/2021 09:42:29.496     Total effective mass: 2.9009e+08 Msun
+20/06/2021 09:42:29.496   Constructing intermediate 20x20x20 grid for particles...
+20/06/2021 09:42:29.585     Smallest number of particles per cell: 6
+20/06/2021 09:42:29.585     Largest  number of particles per cell: 3593
+20/06/2021 09:42:29.585     Average  number of particles per cell: 175.6
+20/06/2021 09:42:29.589   Constructing the spatial tree grid...
+20/06/2021 09:42:29.589   Subdividing level 0: 1 nodes
+20/06/2021 09:42:29.589   Subdividing level 1: 8 nodes
+20/06/2021 09:42:29.589   Subdividing level 2: 64 nodes
+20/06/2021 09:42:29.589   Subdividing level 3: 512 nodes
+20/06/2021 09:42:29.596   Subdividing level 4: 4096 nodes
+20/06/2021 09:42:29.643   Subdividing level 5: 31672 nodes
+20/06/2021 09:42:29.895   Subdividing level 6: 120872 nodes
+20/06/2021 09:42:30.713   Subdividing level 7: 253752 nodes
+20/06/2021 09:42:32.944   Subdividing level 8: 435128 nodes
+20/06/2021 09:42:37.970   Evaluation for level 8: 96.9%
+20/06/2021 09:42:39.003   Subdividing level 9: 667112 nodes
+20/06/2021 09:42:44.083   Evaluation for level 9: 35.6%
+20/06/2021 09:42:49.165   Evaluation for level 9: 75.0%
+20/06/2021 09:42:54.117   Subdividing level 10: 1061672 nodes
+20/06/2021 09:42:59.230   Evaluation for level 10: 14.1%
+20/06/2021 09:43:04.359   Evaluation for level 10: 31.2%
+20/06/2021 09:43:09.696   Evaluation for level 10: 47.8%
+20/06/2021 09:43:14.826   Evaluation for level 10: 66.2%
+20/06/2021 09:43:19.831   Evaluation for level 10: 84.4%
+20/06/2021 09:43:25.001   Evaluation for level 10: 99.4%
+20/06/2021 09:43:28.576   Finished construction of the spatial tree grid
+20/06/2021 09:43:28.576   Number of cells at each level in the tree hierarchy:
+20/06/2021 09:43:28.576     Level  0:        0 (  0.0%)  |
+20/06/2021 09:43:28.576     Level  1:        0 (  0.0%)  |
+20/06/2021 09:43:28.576     Level  2:        0 (  0.0%)  |
+20/06/2021 09:43:28.576     Level  3:        0 (  0.0%)  |
+20/06/2021 09:43:28.576     Level  4:      137 (  0.0%)  |
+20/06/2021 09:43:28.576     Level  5:    16563 (  0.5%)  |
+20/06/2021 09:43:28.576     Level  6:    89153 (  2.9%)  |**
+20/06/2021 09:43:28.576     Level  7:   199361 (  6.5%)  |****
+20/06/2021 09:43:28.576     Level  8:   351739 ( 11.5%)  |*******
+20/06/2021 09:43:28.576     Level  9:   534403 ( 17.4%)  |***********
+20/06/2021 09:43:28.576     Level 10:   945335 ( 30.8%)  |********************
+20/06/2021 09:43:28.576     Level 11:   930696 ( 30.3%)  |********************
+20/06/2021 09:43:28.576     TOTAL   :  3067387 (100.0%)
+20/06/2021 09:43:31.417   MediumSystem allocated 5.76 GB of memory
+20/06/2021 09:43:31.417   Calculating densities for 3067387 cells...
+20/06/2021 09:43:36.446   Calculated cell densities: 16.2%
+20/06/2021 09:43:41.503   Calculated cell densities: 25.9%
+20/06/2021 09:43:46.632   Calculated cell densities: 36.2%
+20/06/2021 09:43:51.689   Calculated cell densities: 40.3%
+20/06/2021 09:43:57.682   Calculated cell densities: 47.8%
+20/06/2021 09:44:02.876   Calculated cell densities: 54.1%
+20/06/2021 09:44:08.090   Calculated cell densities: 60.9%
+20/06/2021 09:44:13.307   Calculated cell densities: 66.2%
+20/06/2021 09:44:18.722   Calculated cell densities: 72.8%
+20/06/2021 09:44:24.599   Calculated cell densities: 77.8%
+20/06/2021 09:44:30.051   Calculated cell densities: 83.4%
+20/06/2021 09:44:35.502   Calculated cell densities: 89.1%
+20/06/2021 09:44:40.555   Calculated cell densities: 94.1%
+20/06/2021 09:44:45.738   Calculated cell densities: 98.1%
+20/06/2021 09:44:51.163   Calculated cell densities: 100.0%
+20/06/2021 09:44:51.163   Done calculating cell densities
+20/06/2021 09:44:54.818   FullInstrument i00 allocated 7.45 GB of memory
+[32m20/06/2021 09:44:54.818 - Finished setup in 271 s (4m 31s).
+[0m20/06/2021 09:44:54.818   Starting setup output...
+[32m20/06/2021 09:44:54.818 - Finished setup output in 0.0 s.
+[0m20/06/2021 09:44:54.818   Starting the run...
+20/06/2021 09:44:54.818   Starting primary emission...
+20/06/2021 09:44:57.361   Launching 1e8 primary emission photon packets
+20/06/2021 09:45:02.364   Launched primary emission photon packets: 0.5%
+20/06/2021 09:45:07.378   Launched primary emission photon packets: 1.1%
+20/06/2021 09:45:12.389   Launched primary emission photon packets: 1.7%
+20/06/2021 09:45:17.420   Launched primary emission photon packets: 2.2%
+20/06/2021 09:45:22.420   Launched primary emission photon packets: 2.8%
+20/06/2021 09:45:27.423   Launched primary emission photon packets: 3.4%
+20/06/2021 09:45:32.424   Launched primary emission photon packets: 4.0%
+20/06/2021 09:45:37.444   Launched primary emission photon packets: 4.5%
+20/06/2021 09:45:42.444   Launched primary emission photon packets: 5.1%
+20/06/2021 09:45:47.447   Launched primary emission photon packets: 5.7%
+20/06/2021 09:45:52.452   Launched primary emission photon packets: 6.2%
+20/06/2021 09:45:57.454   Launched primary emission photon packets: 6.8%
+20/06/2021 09:46:02.469   Launched primary emission photon packets: 7.4%
+20/06/2021 09:46:07.491   Launched primary emission photon packets: 8.0%
+20/06/2021 09:46:12.496   Launched primary emission photon packets: 8.5%
+20/06/2021 09:46:17.501   Launched primary emission photon packets: 9.1%
+20/06/2021 09:46:22.503   Launched primary emission photon packets: 9.7%
+20/06/2021 09:46:27.513   Launched primary emission photon packets: 10.2%
+20/06/2021 09:46:32.517   Launched primary emission photon packets: 10.8%
+20/06/2021 09:46:37.517   Launched primary emission photon packets: 11.4%
+20/06/2021 09:46:42.528   Launched primary emission photon packets: 11.9%
+20/06/2021 09:46:47.530   Launched primary emission photon packets: 12.5%
+20/06/2021 09:46:52.543   Launched primary emission photon packets: 13.0%
+20/06/2021 09:46:57.547   Launched primary emission photon packets: 13.6%
+20/06/2021 09:47:02.550   Launched primary emission photon packets: 14.1%
+20/06/2021 09:47:07.550   Launched primary emission photon packets: 14.6%
+20/06/2021 09:47:12.553   Launched primary emission photon packets: 15.2%
+20/06/2021 09:47:17.565   Launched primary emission photon packets: 15.7%
+20/06/2021 09:47:22.565   Launched primary emission photon packets: 16.2%
+20/06/2021 09:47:27.567   Launched primary emission photon packets: 16.8%
+20/06/2021 09:47:32.584   Launched primary emission photon packets: 17.3%
+20/06/2021 09:47:37.591   Launched primary emission photon packets: 17.8%
+20/06/2021 09:47:42.591   Launched primary emission photon packets: 18.4%
+20/06/2021 09:47:47.596   Launched primary emission photon packets: 18.9%
+20/06/2021 09:47:52.599   Launched primary emission photon packets: 19.5%
+20/06/2021 09:47:57.602   Launched primary emission photon packets: 20.0%
+20/06/2021 09:48:02.604   Launched primary emission photon packets: 20.5%
+20/06/2021 09:48:07.612   Launched primary emission photon packets: 21.1%
+20/06/2021 09:48:12.615   Launched primary emission photon packets: 21.6%
+20/06/2021 09:48:17.637   Launched primary emission photon packets: 22.1%
+20/06/2021 09:48:22.647   Launched primary emission photon packets: 22.6%
+20/06/2021 09:48:27.669   Launched primary emission photon packets: 23.2%
+20/06/2021 09:48:32.678   Launched primary emission photon packets: 23.7%
+20/06/2021 09:48:37.678   Launched primary emission photon packets: 24.2%
+20/06/2021 09:48:42.682   Launched primary emission photon packets: 24.8%
+20/06/2021 09:48:47.686   Launched primary emission photon packets: 25.3%
+20/06/2021 09:48:52.692   Launched primary emission photon packets: 25.8%
+20/06/2021 09:48:57.697   Launched primary emission photon packets: 26.4%
+20/06/2021 09:49:02.701   Launched primary emission photon packets: 26.9%
+20/06/2021 09:49:07.710   Launched primary emission photon packets: 27.4%
+20/06/2021 09:49:12.725   Launched primary emission photon packets: 27.9%
+20/06/2021 09:49:17.726   Launched primary emission photon packets: 28.5%
+20/06/2021 09:49:22.740   Launched primary emission photon packets: 29.0%
+20/06/2021 09:49:27.755   Launched primary emission photon packets: 29.5%
+20/06/2021 09:49:32.756   Launched primary emission photon packets: 30.1%
+20/06/2021 09:49:37.758   Launched primary emission photon packets: 30.6%
+20/06/2021 09:49:42.758   Launched primary emission photon packets: 31.1%
+20/06/2021 09:49:47.758   Launched primary emission photon packets: 31.6%
+20/06/2021 09:49:52.761   Launched primary emission photon packets: 32.1%
+20/06/2021 09:49:57.776   Launched primary emission photon packets: 32.7%
+20/06/2021 09:50:02.789   Launched primary emission photon packets: 33.2%
+20/06/2021 09:50:07.797   Launched primary emission photon packets: 33.7%
+20/06/2021 09:50:12.803   Launched primary emission photon packets: 34.3%
+20/06/2021 09:50:17.813   Launched primary emission photon packets: 34.8%
+20/06/2021 09:50:22.817   Launched primary emission photon packets: 35.3%
+20/06/2021 09:50:27.819   Launched primary emission photon packets: 35.8%
+20/06/2021 09:50:32.829   Launched primary emission photon packets: 36.4%
+20/06/2021 09:50:37.830   Launched primary emission photon packets: 36.9%
+20/06/2021 09:50:42.851   Launched primary emission photon packets: 37.4%
+20/06/2021 09:50:47.852   Launched primary emission photon packets: 37.9%
+20/06/2021 09:50:52.861   Launched primary emission photon packets: 38.5%
+20/06/2021 09:50:57.871   Launched primary emission photon packets: 39.0%
+20/06/2021 09:51:02.887   Launched primary emission photon packets: 39.5%
+20/06/2021 09:51:07.888   Launched primary emission photon packets: 40.1%
+20/06/2021 09:51:12.897   Launched primary emission photon packets: 40.6%
+20/06/2021 09:51:17.908   Launched primary emission photon packets: 41.1%
+20/06/2021 09:51:22.909   Launched primary emission photon packets: 41.6%
+20/06/2021 09:51:27.934   Launched primary emission photon packets: 42.1%
+20/06/2021 09:51:32.938   Launched primary emission photon packets: 42.7%
+20/06/2021 09:51:37.939   Launched primary emission photon packets: 43.2%
+20/06/2021 09:51:42.945   Launched primary emission photon packets: 43.7%
+20/06/2021 09:51:47.954   Launched primary emission photon packets: 44.2%
+20/06/2021 09:51:52.956   Launched primary emission photon packets: 44.8%
+20/06/2021 09:51:57.967   Launched primary emission photon packets: 45.3%
+20/06/2021 09:52:02.986   Launched primary emission photon packets: 45.8%
+20/06/2021 09:52:08.007   Launched primary emission photon packets: 46.3%
+20/06/2021 09:52:13.012   Launched primary emission photon packets: 46.8%
+20/06/2021 09:52:18.018   Launched primary emission photon packets: 47.4%
+20/06/2021 09:52:23.028   Launched primary emission photon packets: 47.9%
+20/06/2021 09:52:28.032   Launched primary emission photon packets: 48.4%
+20/06/2021 09:52:33.039   Launched primary emission photon packets: 48.9%
+20/06/2021 09:52:38.060   Launched primary emission photon packets: 49.4%
+20/06/2021 09:52:43.060   Launched primary emission photon packets: 50.0%
+20/06/2021 09:52:48.061   Launched primary emission photon packets: 50.5%
+20/06/2021 09:52:53.067   Launched primary emission photon packets: 51.0%
+20/06/2021 09:52:58.070   Launched primary emission photon packets: 51.5%
+20/06/2021 09:53:03.073   Launched primary emission photon packets: 52.0%
+20/06/2021 09:53:08.073   Launched primary emission photon packets: 52.6%
+20/06/2021 09:53:13.101   Launched primary emission photon packets: 53.1%
+20/06/2021 09:53:18.104   Launched primary emission photon packets: 53.6%
+20/06/2021 09:53:23.118   Launched primary emission photon packets: 54.1%
+20/06/2021 09:53:28.132   Launched primary emission photon packets: 54.6%
+20/06/2021 09:53:33.166   Launched primary emission photon packets: 55.1%
+20/06/2021 09:53:38.170   Launched primary emission photon packets: 55.7%
+20/06/2021 09:53:43.177   Launched primary emission photon packets: 56.2%
+20/06/2021 09:53:48.177   Launched primary emission photon packets: 56.7%
+20/06/2021 09:53:53.181   Launched primary emission photon packets: 57.2%
+20/06/2021 09:53:58.185   Launched primary emission photon packets: 57.7%
+20/06/2021 09:54:03.190   Launched primary emission photon packets: 58.2%
+20/06/2021 09:54:08.190   Launched primary emission photon packets: 58.8%
+20/06/2021 09:54:13.199   Launched primary emission photon packets: 59.3%
+20/06/2021 09:54:18.211   Launched primary emission photon packets: 59.8%
+20/06/2021 09:54:23.214   Launched primary emission photon packets: 60.3%
+20/06/2021 09:54:28.226   Launched primary emission photon packets: 60.9%
+20/06/2021 09:54:33.242   Launched primary emission photon packets: 61.4%
+20/06/2021 09:54:38.251   Launched primary emission photon packets: 61.9%
+20/06/2021 09:54:43.252   Launched primary emission photon packets: 62.4%
+20/06/2021 09:54:48.252   Launched primary emission photon packets: 63.0%
+20/06/2021 09:54:53.260   Launched primary emission photon packets: 63.5%
+20/06/2021 09:54:58.277   Launched primary emission photon packets: 64.0%
+20/06/2021 09:55:03.277   Launched primary emission photon packets: 64.5%
+20/06/2021 09:55:08.279   Launched primary emission photon packets: 65.1%
+20/06/2021 09:55:13.293   Launched primary emission photon packets: 65.6%
+20/06/2021 09:55:18.316   Launched primary emission photon packets: 66.1%
+20/06/2021 09:55:23.322   Launched primary emission photon packets: 66.6%
+20/06/2021 09:55:28.331   Launched primary emission photon packets: 67.1%
+20/06/2021 09:55:33.335   Launched primary emission photon packets: 67.7%
+20/06/2021 09:55:38.370   Launched primary emission photon packets: 68.2%
+20/06/2021 09:55:43.386   Launched primary emission photon packets: 68.7%
+20/06/2021 09:55:48.408   Launched primary emission photon packets: 69.3%
+20/06/2021 09:55:53.420   Launched primary emission photon packets: 69.8%
+20/06/2021 09:55:58.432   Launched primary emission photon packets: 70.4%
+20/06/2021 09:56:03.454   Launched primary emission photon packets: 70.9%
+20/06/2021 09:56:08.465   Launched primary emission photon packets: 71.5%
+20/06/2021 09:56:13.474   Launched primary emission photon packets: 72.0%
+20/06/2021 09:56:18.479   Launched primary emission photon packets: 72.6%
+20/06/2021 09:56:23.481   Launched primary emission photon packets: 73.2%
+20/06/2021 09:56:28.485   Launched primary emission photon packets: 73.7%
+20/06/2021 09:56:33.489   Launched primary emission photon packets: 74.3%
+20/06/2021 09:56:38.522   Launched primary emission photon packets: 74.9%
+20/06/2021 09:56:43.524   Launched primary emission photon packets: 75.5%
+20/06/2021 09:56:48.524   Launched primary emission photon packets: 76.0%
+20/06/2021 09:56:53.525   Launched primary emission photon packets: 76.6%
+20/06/2021 09:56:58.529   Launched primary emission photon packets: 77.2%
+20/06/2021 09:57:03.538   Launched primary emission photon packets: 77.8%
+20/06/2021 09:57:08.547   Launched primary emission photon packets: 78.3%
+20/06/2021 09:57:13.547   Launched primary emission photon packets: 78.9%
+20/06/2021 09:57:18.569   Launched primary emission photon packets: 79.5%
+20/06/2021 09:57:23.575   Launched primary emission photon packets: 80.1%
+20/06/2021 09:57:28.581   Launched primary emission photon packets: 80.7%
+20/06/2021 09:57:33.602   Launched primary emission photon packets: 81.3%
+20/06/2021 09:57:38.603   Launched primary emission photon packets: 81.9%
+20/06/2021 09:57:43.605   Launched primary emission photon packets: 82.6%
+20/06/2021 09:57:48.613   Launched primary emission photon packets: 83.2%
+20/06/2021 09:57:53.615   Launched primary emission photon packets: 83.8%
+20/06/2021 09:57:58.615   Launched primary emission photon packets: 84.4%
+20/06/2021 09:58:03.616   Launched primary emission photon packets: 85.1%
+20/06/2021 09:58:08.620   Launched primary emission photon packets: 85.7%
+20/06/2021 09:58:13.620   Launched primary emission photon packets: 86.3%
+20/06/2021 09:58:18.643   Launched primary emission photon packets: 87.0%
+20/06/2021 09:58:23.653   Launched primary emission photon packets: 87.6%
+20/06/2021 09:58:28.659   Launched primary emission photon packets: 88.3%
+20/06/2021 09:58:33.661   Launched primary emission photon packets: 88.9%
+20/06/2021 09:58:38.664   Launched primary emission photon packets: 89.6%
+20/06/2021 09:58:43.680   Launched primary emission photon packets: 90.3%
+20/06/2021 09:58:48.698   Launched primary emission photon packets: 90.9%
+20/06/2021 09:58:53.709   Launched primary emission photon packets: 91.6%
+20/06/2021 09:58:58.712   Launched primary emission photon packets: 92.3%
+20/06/2021 09:59:03.726   Launched primary emission photon packets: 93.0%
+20/06/2021 09:59:08.731   Launched primary emission photon packets: 93.7%
+20/06/2021 09:59:13.733   Launched primary emission photon packets: 94.3%
+20/06/2021 09:59:18.742   Launched primary emission photon packets: 95.0%
+20/06/2021 09:59:23.748   Launched primary emission photon packets: 95.6%
+20/06/2021 09:59:28.755   Launched primary emission photon packets: 96.3%
+20/06/2021 09:59:33.775   Launched primary emission photon packets: 96.9%
+20/06/2021 09:59:38.780   Launched primary emission photon packets: 97.5%
+20/06/2021 09:59:43.781   Launched primary emission photon packets: 98.2%
+20/06/2021 09:59:48.795   Launched primary emission photon packets: 98.8%
+20/06/2021 09:59:53.797   Launched primary emission photon packets: 99.4%
+20/06/2021 09:59:58.803   Launched primary emission photon packets: 99.8%
+20/06/2021 10:00:03.809   Launched primary emission photon packets: 99.9%
+20/06/2021 10:00:09.008   Launched primary emission photon packets: 100.0%
+[32m20/06/2021 10:00:11.841 - Finished primary emission in 917 s (15m 17s).
+[0m20/06/2021 10:00:11.841   Starting secondary emission...
+20/06/2021 10:00:13.091   Emitting from 3065319 out of 3067387 spatial cells
+20/06/2021 10:00:13.104   Launching 1e8 secondary emission photon packets
+20/06/2021 10:00:18.106   Launched secondary emission photon packets: 3.6%
+20/06/2021 10:00:23.106   Launched secondary emission photon packets: 7.3%
+20/06/2021 10:00:28.107   Launched secondary emission photon packets: 10.8%
+20/06/2021 10:00:33.108   Launched secondary emission photon packets: 13.9%
+20/06/2021 10:00:38.108   Launched secondary emission photon packets: 16.8%
+20/06/2021 10:00:43.109   Launched secondary emission photon packets: 19.6%
+20/06/2021 10:00:48.111   Launched secondary emission photon packets: 22.4%
+20/06/2021 10:00:53.111   Launched secondary emission photon packets: 25.0%
+20/06/2021 10:00:58.111   Launched secondary emission photon packets: 27.5%
+20/06/2021 10:01:03.121   Launched secondary emission photon packets: 30.0%
+20/06/2021 10:01:08.127   Launched secondary emission photon packets: 32.4%
+20/06/2021 10:01:13.133   Launched secondary emission photon packets: 34.9%
+20/06/2021 10:01:18.136   Launched secondary emission photon packets: 37.3%
+20/06/2021 10:01:23.136   Launched secondary emission photon packets: 39.7%
+20/06/2021 10:01:28.136   Launched secondary emission photon packets: 42.1%
+20/06/2021 10:01:33.136   Launched secondary emission photon packets: 44.5%
+20/06/2021 10:01:38.138   Launched secondary emission photon packets: 47.0%
+20/06/2021 10:01:43.142   Launched secondary emission photon packets: 49.5%
+20/06/2021 10:01:48.147   Launched secondary emission photon packets: 52.0%
+20/06/2021 10:01:53.148   Launched secondary emission photon packets: 54.5%
+20/06/2021 10:01:58.155   Launched secondary emission photon packets: 57.0%
+20/06/2021 10:02:03.158   Launched secondary emission photon packets: 59.3%
+20/06/2021 10:02:08.160   Launched secondary emission photon packets: 61.5%
+20/06/2021 10:02:13.169   Launched secondary emission photon packets: 63.8%
+20/06/2021 10:02:18.175   Launched secondary emission photon packets: 66.0%
+20/06/2021 10:02:23.180   Launched secondary emission photon packets: 68.2%
+20/06/2021 10:02:28.185   Launched secondary emission photon packets: 70.5%
+20/06/2021 10:02:33.186   Launched secondary emission photon packets: 72.7%
+20/06/2021 10:02:38.187   Launched secondary emission photon packets: 74.9%
+20/06/2021 10:02:43.192   Launched secondary emission photon packets: 77.0%
+20/06/2021 10:02:48.194   Launched secondary emission photon packets: 79.2%
+20/06/2021 10:02:53.197   Launched secondary emission photon packets: 81.4%
+20/06/2021 10:02:58.197   Launched secondary emission photon packets: 83.6%
+20/06/2021 10:03:03.203   Launched secondary emission photon packets: 85.9%
+20/06/2021 10:03:08.207   Launched secondary emission photon packets: 88.1%
+20/06/2021 10:03:13.211   Launched secondary emission photon packets: 90.4%
+20/06/2021 10:03:18.214   Launched secondary emission photon packets: 92.7%
+20/06/2021 10:03:23.214   Launched secondary emission photon packets: 95.0%
+20/06/2021 10:03:28.214   Launched secondary emission photon packets: 96.9%
+20/06/2021 10:03:33.219   Launched secondary emission photon packets: 98.6%
+20/06/2021 10:03:38.220   Launched secondary emission photon packets: 99.6%
+20/06/2021 10:03:43.257   Launched secondary emission photon packets: 100.0%
+[32m20/06/2021 10:03:45.254 - Finished secondary emission in 213 s (3m 33s).
+[0m[32m20/06/2021 10:03:45.254 - Finished the run in 1130 s (18m 50s).
+[0m20/06/2021 10:03:45.254   Starting final output...
+20/06/2021 10:03:46.774   FullInstrument i00 wrote SED to /scratch/ntf229/RT_fit/resources/SKIRT/g3.61e11/maxLevel11/wavelengths250/numPhotons1e8/niter2048/inc0/dust/sph_i00_sed.dat
+20/06/2021 10:03:50.046   FullInstrument i00 wrote total flux to FITS file /scratch/ntf229/RT_fit/resources/SKIRT/g3.61e11/maxLevel11/wavelengths250/numPhotons1e8/niter2048/inc0/dust/sph_i00_total.fits
+[32m20/06/2021 10:03:50.046 - Finished final output in 4.8 s.
+[0m[32m20/06/2021 10:03:50.046 - Finished simulation sph using 40 threads and a single process in 1406 s (23m 26s).
+[0m20/06/2021 10:03:53.754   Available memory: 188 GB -- Peak memory usage: 15.7 GB (8.3%)
+20/06/2021 10:03:54.492   Starting visual/plot_seds...
+20/06/2021 10:03:55.115   Created /scratch/ntf229/RT_fit/resources/SKIRT/g3.61e11/maxLevel11/wavelengths250/numPhotons1e8/niter2048/inc0/dust/sph_i00_sed.pdf
+20/06/2021 10:03:55.115   Finished visual/plot_seds.
+Saved spectrum as numpy arrays
+20/06/2021 10:03:55.598   Starting visual/make_images...
+20/06/2021 10:03:57.510   Created /scratch/ntf229/RT_fit/resources/SKIRT/g3.61e11/maxLevel11/wavelengths250/numPhotons1e8/niter2048/inc0/dust/sph_i00_total.png
+20/06/2021 10:03:57.512   Finished visual/make_images.
+The code has started
+Using GWSLC1
+Generating SKIRT SED
+Including dust
+maxLength: 159977.09375
+skipping fit

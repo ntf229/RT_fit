@@ -1,0 +1,172 @@
+# Creates txt files for importing SPH data into SKIRT
+# Be sure to update filePath to the correct location
+
+import pynbody
+import numpy as np
+from timeit import default_timer as timer
+from os.path import expanduser
+import os
+import argparse
+
+class galaxy:
+
+	def __init__(self,name):
+
+		filePath = '/scratch/ntf229/FirstBatch/'+name+'/'+name+'.01024'
+
+		# Load NIHAO data
+		self.data = pynbody.load(filePath)
+
+		self.full_x_pos = np.float32(self.data.star['pos'].in_units('pc')[:][:,0])
+		self.full_y_pos = np.float32(self.data.star['pos'].in_units('pc')[:][:,1])
+		self.full_z_pos = np.float32(self.data.star['pos'].in_units('pc')[:][:,2])
+		self.full_mass = np.float32(self.data.star['massform'].in_units('Msol')[:]) 	# in solar masses	
+		self.full_metals = np.float32(self.data.star['metals'][:])
+		self.full_age = np.float32(self.data.star['age'].in_units('yr')[:])
+		self.full_x_vel = np.float32(self.data.star['vel'].in_units('km s**-1')[:][:,0])
+		self.full_y_vel = np.float32(self.data.star['vel'].in_units('km s**-1')[:][:,1])
+		self.full_z_vel = np.float32(self.data.star['vel'].in_units('km s**-1')[:][:,2])
+		self.full_smooth = np.float32(self.data.star['smooth'].in_units('pc')[:])
+
+		self.full_x_pos_dust = np.float32(self.data.gas['pos'].in_units('pc')[:][:,0])
+		self.full_y_pos_dust = np.float32(self.data.gas['pos'].in_units('pc')[:][:,1])
+		self.full_z_pos_dust = np.float32(self.data.gas['pos'].in_units('pc')[:][:,2])
+		self.full_smooth_dust = np.float32(self.data.gas['smooth'].in_units('pc')[:])
+		self.full_mass_dust = np.float32(self.data.gas['mass'].in_units('Msol')[:]) 	# in solar masses	
+		self.full_metals_dust = np.float32(self.data.gas['metals'][:])
+		self.full_temp_dust = np.float32(self.data.gas['temp'][:])
+
+		self.full_length_star = len(self.full_x_pos) 						# starting length
+		self.starIndex = [] 	
+		print(self.full_length_star, 'full star')											# indices to be deleted from data
+		
+		self.full_length_dust = len(self.full_x_pos_dust) 					# starting length
+		self.dustIndex = [] 		
+		print(self.full_length_dust, 'full dust')										# indices to be deleted from data
+
+		# Halo catalogue
+		h = self.data.halos() # ordered by number of particles (starts at 1)
+
+		#vir_radius = h[1].properties['Rvir']
+
+		if name == 'g3.49e11':
+			haloNum = int(2) # first halo is off center for this galaxy
+		else:
+			haloNum = int(1)
+                
+		xMin = np.amin(h[haloNum]['x'].in_units('pc'))
+		xMax = np.amax(h[haloNum]['x'].in_units('pc'))
+		yMin = np.amin(h[haloNum]['y'].in_units('pc'))
+		yMax = np.amax(h[haloNum]['y'].in_units('pc'))
+		zMin = np.amin(h[haloNum]['z'].in_units('pc'))
+		zMax = np.amax(h[haloNum]['z'].in_units('pc'))
+		
+		xLength = abs(xMax - xMin)
+		yLength = abs(yMax - yMin)
+		zLength = abs(zMax - zMin)
+		
+		diameter = np.amax([xLength,yLength,zLength])
+
+		if name == 'g3.23e11':
+			diameter = diameter * 2 # this galaxy is too zoomed in
+                
+		xCenter = (xMax + xMin)/2
+		yCenter = (yMax + yMin)/2
+		zCenter = (zMax + zMin)/2
+
+		# Makes cuts based on position
+		self.xAbsMin = xCenter - (diameter/2)															
+		self.xAbsMax = xCenter + (diameter/2)
+		self.yAbsMin = yCenter - (diameter/2)
+		self.yAbsMax = yCenter + (diameter/2)
+		self.zAbsMin = zCenter - (diameter/2)
+		self.zAbsMax = zCenter + (diameter/2)
+
+	def starCut(self):
+
+		for i in range(self.full_length_star):
+			if (self.full_x_pos[i] < self.xAbsMin) or (self.full_x_pos[i] > self.xAbsMax):
+				self.starIndex.append(i)
+			elif (self.full_y_pos[i] < self.yAbsMin) or (self.full_y_pos[i] > self.yAbsMax):
+				self.starIndex.append(i)
+			elif (self.full_z_pos[i] < self.zAbsMin) or (self.full_z_pos[i] > self.zAbsMax):
+				self.starIndex.append(i)
+
+		self.x_pos = np.float32(np.delete(self.full_x_pos,self.starIndex))
+		self.y_pos = np.float32(np.delete(self.full_y_pos,self.starIndex))
+		self.z_pos = np.float32(np.delete(self.full_z_pos,self.starIndex))
+		self.mass = np.float32(np.delete(self.full_mass,self.starIndex))
+		self.metals = np.float32(np.delete(self.full_metals,self.starIndex) )
+		self.age = np.float32(np.delete(self.full_age,self.starIndex))
+		self.x_vel = np.float32(np.delete(self.full_x_vel,self.starIndex))
+		self.y_vel = np.float32(np.delete(self.full_y_vel,self.starIndex))
+		self.z_vel = np.float32(np.delete(self.full_z_vel,self.starIndex))
+		self.smooth = np.float32(np.delete(self.full_smooth,self.starIndex))
+
+
+		self.starLength = len(self.x_pos)
+		print(self.starLength, 'stars')
+
+	def dustCut(self):
+
+		for i in range(self.full_length_dust):
+			if (self.full_x_pos_dust[i] < self.xAbsMin) or (self.full_x_pos_dust[i] > self.xAbsMax):
+				self.dustIndex.append(i)
+			elif (self.full_y_pos_dust[i] < self.yAbsMin) or (self.full_y_pos_dust[i] > self.yAbsMax):
+				self.dustIndex.append(i)
+			elif (self.full_z_pos_dust[i] < self.zAbsMin) or (self.full_z_pos_dust[i] > self.zAbsMax):
+				self.dustIndex.append(i)
+
+		self.x_pos_dust = np.float32(np.delete(self.full_x_pos_dust,self.dustIndex))
+		self.y_pos_dust = np.float32(np.delete(self.full_y_pos_dust,self.dustIndex))
+		self.z_pos_dust = np.float32(np.delete(self.full_z_pos_dust,self.dustIndex))
+		self.smooth_dust = np.float32(np.delete(self.full_smooth_dust,self.dustIndex))
+		self.mass_dust = np.float32(np.delete(self.full_mass_dust,self.dustIndex))
+		self.metals_dust = np.float32(np.delete(self.full_metals_dust,self.dustIndex))
+		self.temp_dust = np.float32(np.delete(self.full_temp_dust,self.dustIndex))
+
+		self.dustLength = len(self.x_pos_dust)
+		print(self.dustLength, 'dust')
+
+	def shift(self):
+
+		xCenter = (self.xAbsMax + self.xAbsMin)/2
+		yCenter = (self.yAbsMax + self.yAbsMin)/2
+		zCenter = (self.zAbsMax + self.zAbsMin)/2
+
+		self.x_pos = self.x_pos - xCenter
+		self.y_pos = self.y_pos - yCenter
+		self.z_pos = self.z_pos - zCenter
+
+		self.x_pos_dust = self.x_pos_dust - xCenter
+		self.y_pos_dust = self.y_pos_dust - yCenter
+		self.z_pos_dust = self.z_pos_dust - zCenter
+		
+
+if __name__=='__main__':
+
+	start = timer()
+
+	# 16 galaxies selected by hand from the NIHAO Suite
+	#galaxies = ['g1.12e12','g1.92e12','g2.39e11','g2.79e12','g3.23e11','g3.49e11','g3.59e11','g3.61e11','g5.31e11','g5.36e11','g5.38e11','g5.55e11','g7.08e11','g7.44e11','g8.26e11','g8.28e11']
+
+	# two galaxies for testing
+	galaxies = ['g3.23e11']
+
+	textPath = '/scratch/ntf229/RT_fit/resources/NIHAO/TextFiles/'
+
+	for i in range(len(galaxies)):
+
+		g = galaxy(galaxies[i])
+
+		g.starCut()
+		g.dustCut()
+		g.shift()
+
+		os.system('mkdir -p '+textPath+galaxies[i])
+		np.savetxt(textPath+galaxies[i]+'/stars.txt',np.float32(np.c_[g.x_pos, g.y_pos, g.z_pos, g.smooth, g.x_vel, g.y_vel, g.z_vel, g.mass, g.metals, g.age]))
+		np.savetxt(textPath+galaxies[i]+'/gas.txt',np.float32(np.c_[g.x_pos_dust, g.y_pos_dust, g.z_pos_dust, g.smooth_dust, g.mass_dust, g.metals_dust, g.temp_dust]))
+
+	end = timer()
+	print('time: ', end - start)
+

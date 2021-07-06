@@ -1,10 +1,77 @@
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [4.92982834e-08 2.16839681e-07 4.30939044e-07 6.04645922e-07
- 9.12081725e-07 2.32271139e-09 5.44333249e-09]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
+maggies [6.03183565e-07 1.87413938e-06 2.77947183e-06 3.38544307e-06
+ 4.36201140e-06 1.12211503e-07 1.67633079e-07 5.62735179e-06
+ 6.10370466e-06 4.40048616e-06 2.77088479e-06 1.47597497e-06
+ 3.54632353e-06 3.88446447e-05 2.59316642e-06 1.61435478e-06
+ 1.10132783e-06 6.83752430e-07 4.82382309e-05 8.81415194e-04
+ 1.67676636e-03 8.87190519e-04 1.42485158e-03 1.61881546e-03
+ 9.85617880e-04 5.03797618e-04 2.02217578e-04]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+model: :::::::
+<class 'prospect.models.sedmodel.SedModel'>
+
+Free Parameters: (name: prior) 
+-----------
+  mass: <class 'prospect.models.priors.LogUniform'>(mini=100000000.0,maxi=10000000000000.0)
+  logzsol: <class 'prospect.models.priors.TopHat'>(mini=-2.0,maxi=0.5)
+  dust2: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
+  tage: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=14)
+  tau: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=50)
+  duste_umin: <class 'prospect.models.priors.TopHat'>(mini=0.1,maxi=25.0)
+  duste_qpah: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
+  duste_gamma: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=1.0)
+  dust1: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
+  dust_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
+  dust1_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
+
+Fixed Parameters: (name: value [, depends_on]) 
+-----------
+  zred: [0.] 
+  sfh: [4] 
+  imf_type: [1] 
+  dust_type: [0] 
+  lumdist: [100] 
+  add_dust_emission: [ True] 
+number of walkers=256
+done burn #0 (16 iterations)
+done burn #1 (32 iterations)
+done burn #2 (64 iterations)
+number of walkers=256
+starting production
+done production
+done fitting
+fit file written
+/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
+/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
+/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
+maggies [5.16100776e-08 2.23893353e-07 4.40660106e-07 6.17608890e-07
+ 9.26871057e-07 2.73479946e-09 6.16849921e-09 1.43108042e-06
+ 1.82319989e-06 1.47282019e-06 1.11229649e-06 7.73576166e-07
+ 2.65707326e-07 1.33801384e-06 1.10237115e-06 8.22250254e-07
+ 6.69203849e-07 3.71178177e-07 1.96901360e-06 2.60928693e-04
+ 8.63357726e-04 2.61695087e-04 5.86297084e-04 8.39177559e-04
+ 6.03587599e-04 3.51043162e-04 1.57790256e-04]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
 redshift is  0.0
 applying luminosity distance 100
 applying dust parameters
@@ -51,42 +118,53 @@ applying dust parameters
 adding dust emission
 dust type set by config file: 0
 in the dust_type=0 if statement
-N is 1048576
-max percentile 1.5635967254638672
-max percentile 95.65701484680176
-max percentile 14.958429336547852
-max percentile 0.8351802825927734
-max percentile 0.2608776092529297
-max percentile 99.68523979187012
-max percentile 96.90976142883301
-max percentile 33.30988883972168
-max percentile 97.6921558380127
-max percentile 52.09031105041504
-max percentile 92.4440860748291
+N is 524288
+max percentile 68.46837997436523
+max percentile 90.71016311645508
+max percentile 42.44832992553711
+max percentile 31.22110366821289
+max percentile 36.695003509521484
+max percentile 35.73122024536133
+max percentile 0.3590583801269531
+max percentile 4.771518707275391
+max percentile 14.183330535888672
+max percentile 94.87066268920898
+max percentile 4.844951629638672
 Maximum posterior probability parameters: 
-mass 27015122370.399536
-logzsol 0.18940863448956957
-dust2 2.03949889368623
-tage 2.1652186593654337
-tau 0.2608642011867338
-duste_umin 24.92332518777783
-duste_qpah 9.748622559134638
-duste_gamma 0.3244030897779623
-dust1 9.501833835059438
-dust_index -0.3490503646498393
-dust1_index 3.32232689417801
+mass 128766578903.77736
+logzsol -0.3718838859756366
+dust2 1.1090722606157501
+tage 8.82651673566089
+tau 1.710641278775671
+duste_umin 2.2017199003614687
+duste_qpah 7.406982066085303e-06
+duste_gamma 2.141225111894601e-05
+dust1 0.08164279291804027
+dust_index -0.019750500943093163
+dust1_index -3.7937577216790346
 The code has started
-Using GWSLC1
+Using DustPedia
 SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.001929
+starting fit
+Time to get SKIRT SED: 0:00:00.007485
 made it to the end of inc0
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [6.22280260e-08 2.75914765e-07 5.45387063e-07 7.69872079e-07
- 1.18149845e-06 3.28246842e-09 7.22072424e-09]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
+maggies [1.35042079e-07 5.17642185e-07 9.23256507e-07 1.25388662e-06
+ 1.84405620e-06 1.72199260e-08 2.58942424e-08 2.67970633e-06
+ 3.20224667e-06 2.41708943e-06 1.53079716e-06 8.49986759e-07
+ 4.37306084e-07 3.14745014e-06 1.45921006e-06 9.28119631e-07
+ 6.38150149e-07 3.76234000e-07 3.94678856e-06 1.08870907e-04
+ 3.62873557e-04 1.09092253e-04 2.26524551e-04 3.54694745e-04
+ 2.77107459e-04 1.63224165e-04 7.24984893e-05]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
 redshift is  0.0
 applying luminosity distance 100
 applying dust parameters
@@ -133,288 +211,53 @@ applying dust parameters
 adding dust emission
 dust type set by config file: 0
 in the dust_type=0 if statement
-N is 1048576
-max percentile 3.251314163208008
-max percentile 96.02370262145996
-max percentile 28.925466537475586
-max percentile 1.2176990509033203
-max percentile 1.0872364044189453
-max percentile 47.244977951049805
-max percentile 37.29510307312012
-max percentile 91.55001640319824
-max percentile 69.37136650085449
-max percentile 45.39618492126465
-max percentile 85.52565574645996
+N is 524288
+max percentile 94.36702728271484
+max percentile 20.159149169921875
+max percentile 93.8497543334961
+max percentile 50.79517364501953
+max percentile 39.02320861816406
+max percentile 7.780265808105469
+max percentile 2.3771286010742188
+max percentile 2.4684906005859375
+max percentile 63.855552673339844
+max percentile 73.33087921142578
+max percentile 94.90604400634766
 Maximum posterior probability parameters: 
-mass 44358234374.05365
-logzsol 0.31325731718865435
-dust2 2.3478270058080626
-tage 2.073919463169571
-tau 0.26387399555021807
-duste_umin 13.283927536675494
-duste_qpah 3.4646000516066473
-duste_gamma 0.9141618390936661
-dust1 1.6087346075537003
-dust_index -0.3591005157805969
-dust1_index 2.9568693868327696
+mass 44886569850.89818
+logzsol -0.29148776527439196
+dust2 1.2392081565207422
+tage 12.319349974314056
+tau 1.510458242200571
+duste_umin 0.11442455568189296
+duste_qpah 0.0005870322008820778
+duste_gamma 4.8278300888126956e-06
+dust1 2.1514301969597622
+dust_index -0.4014768602346399
+dust1_index 3.8963421728582066
 The code has started
-Using GWSLC1
+Using DustPedia
 SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.002520
-made it to the end of inc15
+starting fit
+Time to get SKIRT SED: 0:00:00.004117
+made it to the end of inc0
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [5.50184575e-08 2.41309981e-07 4.74976835e-07 6.66537090e-07
- 1.01320493e-06 2.81220306e-09 6.34351798e-09]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-model: :::::::
-<class 'prospect.models.sedmodel.SedModel'>
-
-Free Parameters: (name: prior) 
------------
-  mass: <class 'prospect.models.priors.LogUniform'>(mini=100000000.0,maxi=10000000000000.0)
-  logzsol: <class 'prospect.models.priors.TopHat'>(mini=-2.0,maxi=0.5)
-  dust2: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  tage: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=14)
-  tau: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=50)
-  duste_umin: <class 'prospect.models.priors.TopHat'>(mini=0.1,maxi=25.0)
-  duste_qpah: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  duste_gamma: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=1.0)
-  dust1: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  dust_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-  dust1_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-
-Fixed Parameters: (name: value [, depends_on]) 
------------
-  zred: [0.] 
-  sfh: [4] 
-  imf_type: [1] 
-  dust_type: [0] 
-  lumdist: [100] 
-  add_dust_emission: [ True] 
-number of walkers=256
-done burn #0 (16 iterations)
-done burn #1 (32 iterations)
-done burn #2 (64 iterations)
-number of walkers=256
-starting production
-done production
-done fitting
-fit file written
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [5.02266552e-08 2.18919380e-07 4.30019342e-07 5.99588904e-07
- 9.00158338e-07 2.50667313e-09 5.74760585e-09]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-model: :::::::
-<class 'prospect.models.sedmodel.SedModel'>
-
-Free Parameters: (name: prior) 
------------
-  mass: <class 'prospect.models.priors.LogUniform'>(mini=100000000.0,maxi=10000000000000.0)
-  logzsol: <class 'prospect.models.priors.TopHat'>(mini=-2.0,maxi=0.5)
-  dust2: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  tage: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=14)
-  tau: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=50)
-  duste_umin: <class 'prospect.models.priors.TopHat'>(mini=0.1,maxi=25.0)
-  duste_qpah: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  duste_gamma: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=1.0)
-  dust1: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  dust_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-  dust1_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-
-Fixed Parameters: (name: value [, depends_on]) 
------------
-  zred: [0.] 
-  sfh: [4] 
-  imf_type: [1] 
-  dust_type: [0] 
-  lumdist: [100] 
-  add_dust_emission: [ True] 
-number of walkers=256
-done burn #0 (16 iterations)
-done burn #1 (32 iterations)
-done burn #2 (64 iterations)
-number of walkers=256
-starting production
-done production
-done fitting
-fit file written
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 20.884323120117188
-max percentile 97.84364700317383
-max percentile 65.11611938476562
-max percentile 0.4149436950683594
-max percentile 0.14486312866210938
-max percentile 25.15125274658203
-max percentile 49.639892578125
-max percentile 56.05030059814453
-max percentile 70.3287124633789
-max percentile 67.92449951171875
-max percentile 86.23104095458984
-Maximum posterior probability parameters: 
-mass 81211895834.5592
-logzsol 0.31840804250799454
-dust2 3.200412504006182
-tage 1.802010628489505
-tau 0.22610531034427495
-duste_umin 6.770615505381355
-duste_qpah 4.801658806261188
-duste_gamma 0.5973717638279912
-dust1 4.487067135773028
-dust_index -0.2555181407687827
-dust1_index 2.4569712557224466
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.002963
-made it to the end of inc10
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 2.1711349487304688
-max percentile 97.9513168334961
-max percentile 24.12405014038086
-max percentile 1.2411117553710938
-max percentile 1.535797119140625
-max percentile 40.450191497802734
-max percentile 34.22565460205078
-max percentile 44.53258514404297
-max percentile 44.152259826660156
-max percentile 43.645572662353516
-max percentile 50.90456008911133
-Maximum posterior probability parameters: 
-mass 28941678237.65556
-logzsol 0.3784118780343799
-dust2 2.090069278507286
-tage 2.1280227234155333
-tau 0.2834649013245262
-duste_umin 10.631017173128425
-duste_qpah 3.465534359800577
-duste_gamma 0.4322654619163483
-dust1 1.5195449071957097
-dust_index -0.35868888949232686
-dust1_index 0.32003295993972675
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.002239
-made it to the end of inc5
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [1.33534988e-07 5.88532142e-07 1.15427633e-06 1.63514791e-06
- 2.53063680e-06 1.26434870e-08 2.08588723e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-model: :::::::
-<class 'prospect.models.sedmodel.SedModel'>
-
-Free Parameters: (name: prior) 
------------
-  mass: <class 'prospect.models.priors.LogUniform'>(mini=100000000.0,maxi=10000000000000.0)
-  logzsol: <class 'prospect.models.priors.TopHat'>(mini=-2.0,maxi=0.5)
-  dust2: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  tage: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=14)
-  tau: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=50)
-  duste_umin: <class 'prospect.models.priors.TopHat'>(mini=0.1,maxi=25.0)
-  duste_qpah: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  duste_gamma: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=1.0)
-  dust1: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  dust_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-  dust1_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-
-Fixed Parameters: (name: value [, depends_on]) 
------------
-  zred: [0.] 
-  sfh: [4] 
-  imf_type: [1] 
-  dust_type: [0] 
-  lumdist: [100] 
-  add_dust_emission: [ True] 
-number of walkers=256
-done burn #0 (16 iterations)
-done burn #1 (32 iterations)
-done burn #2 (64 iterations)
-number of walkers=256
-starting production
-done production
-done fitting
-fit file written
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 2.6787757873535156
-max percentile 98.93341064453125
-max percentile 28.71685028076172
-max percentile 1.36260986328125
-max percentile 0.8352279663085938
-max percentile 15.913200378417969
-max percentile 72.320556640625
-max percentile 20.60708999633789
-max percentile 91.13388061523438
-max percentile 29.166030883789062
-max percentile 86.54203414916992
-Maximum posterior probability parameters: 
-mass 41044080851.8784
-logzsol 0.4752008681748049
-dust2 1.2035138456610421
-tage 2.6012526364386908
-tau 0.36567140665056497
-duste_umin 3.644437779081322
-duste_qpah 7.389245536740238
-duste_gamma 0.24196369934646694
-dust1 6.124723502966931
-dust_index -0.5465818542327165
-dust1_index 2.9005177268216014
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.002898
-made it to the end of inc80
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [7.00849262e-08 3.12641618e-07 6.19763539e-07 8.78284994e-07
- 1.35509004e-06 4.03755291e-09 8.40395794e-09]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
+maggies [3.56407380e-07 1.18996681e-06 1.88174973e-06 2.38094752e-06
+ 3.18596184e-06 4.85827639e-08 8.03304550e-08 4.32166569e-06
+ 4.96391662e-06 3.75577186e-06 2.54821785e-06 1.43925494e-06
+ 4.27512582e-06 4.81971508e-05 2.41231907e-06 1.56518349e-06
+ 1.09898886e-06 6.91604569e-07 6.05726517e-05 1.13870598e-03
+ 1.90049719e-03 1.14746807e-03 1.77003106e-03 1.82877745e-03
+ 1.02689901e-03 5.05002768e-04 1.98397394e-04]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
 redshift is  0.0
 applying luminosity distance 100
 applying dust parameters
@@ -458,10 +301,371 @@ fit file written
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [7.84671423e-08 3.48621222e-07 6.90542688e-07 9.80664886e-07
- 1.51724278e-06 5.30016415e-09 1.01396270e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
+maggies [5.90262590e-08 3.01689016e-07 6.81606625e-07 1.04706646e-06
+ 1.73310800e-06 3.44535840e-09 6.71327805e-09 3.10225381e-06
+ 4.39196256e-06 3.87317149e-06 3.10922543e-06 2.15893058e-06
+ 1.74813797e-06 8.63229881e-06 3.12717441e-06 2.30972188e-06
+ 1.79183891e-06 1.07423764e-06 1.15633937e-05 8.83988132e-04
+ 1.34227491e-03 8.93214459e-04 1.38412717e-03 1.28537958e-03
+ 6.40514883e-04 2.98163915e-04 1.12757310e-04]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+model: :::::::
+<class 'prospect.models.sedmodel.SedModel'>
+
+Free Parameters: (name: prior) 
+-----------
+  mass: <class 'prospect.models.priors.LogUniform'>(mini=100000000.0,maxi=10000000000000.0)
+  logzsol: <class 'prospect.models.priors.TopHat'>(mini=-2.0,maxi=0.5)
+  dust2: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
+  tage: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=14)
+  tau: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=50)
+  duste_umin: <class 'prospect.models.priors.TopHat'>(mini=0.1,maxi=25.0)
+  duste_qpah: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
+  duste_gamma: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=1.0)
+  dust1: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
+  dust_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
+  dust1_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
+
+Fixed Parameters: (name: value [, depends_on]) 
+-----------
+  zred: [0.] 
+  sfh: [4] 
+  imf_type: [1] 
+  dust_type: [0] 
+  lumdist: [100] 
+  add_dust_emission: [ True] 
+number of walkers=256
+done burn #0 (16 iterations)
+done burn #1 (32 iterations)
+done burn #2 (64 iterations)
+number of walkers=256
+starting production
+done production
+done fitting
+fit file written
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+N is 524288
+max percentile 55.2739143371582
+max percentile 28.476619720458984
+max percentile 68.72930526733398
+max percentile 82.09657669067383
+max percentile 88.13962936401367
+max percentile 42.78383255004883
+max percentile 4.938602447509766
+max percentile 5.659580230712891
+max percentile 3.8481712341308594
+max percentile 45.33395767211914
+max percentile 2.265453338623047
+Maximum posterior probability parameters: 
+mass 52849630080.51936
+logzsol -0.479934397549542
+dust2 0.8335898504371283
+tage 13.3651875269508
+tau 2.035442434429905
+duste_umin 0.6584143729295492
+duste_qpah 0.0003980516207663235
+duste_gamma 2.2582708306292005e-05
+dust1 0.004660817780044707
+dust_index -0.5004559965558409
+dust1_index -2.0418335674656998
+The code has started
+Using DustPedia
+SKIRT generated SED already exists
+starting fit
+Time to get SKIRT SED: 0:00:00.009932
+made it to the end of inc0
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+N is 524288
+max percentile 87.92181015014648
+max percentile 15.062618255615234
+max percentile 91.60833358764648
+max percentile 67.18912124633789
+max percentile 62.96415328979492
+max percentile 50.3993034362793
+max percentile 0.8696556091308594
+max percentile 0.2669334411621094
+max percentile 92.0079231262207
+max percentile 73.67105484008789
+max percentile 89.20831680297852
+Maximum posterior probability parameters: 
+mass 87145280990.79643
+logzsol -1.29413726979798
+dust2 1.4481639444689323
+tage 12.258477212079628
+tau 3.6080227072924678
+duste_umin 2.7090331171672632
+duste_qpah 2.4393478454148637e-05
+duste_gamma 7.454112660864335e-07
+dust1 8.570183775822304
+dust_index -0.6287072196660577
+dust1_index 2.255584257245734
+The code has started
+Using DustPedia
+SKIRT generated SED already exists
+starting fit
+Time to get SKIRT SED: 0:00:00.004436
+made it to the end of inc0
+/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
+/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
+/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
+maggies [4.52402942e-08 1.99925734e-07 3.98995744e-07 5.77891050e-07
+ 9.10241972e-07 4.42417877e-09 7.34675561e-09 1.51028539e-06
+ 2.01393397e-06 1.68381650e-06 1.22033776e-06 7.54211564e-07
+ 3.20588921e-07 1.70119995e-06 1.19759212e-06 8.16696385e-07
+ 5.84994218e-07 3.30730695e-07 2.13264767e-06 1.11049151e-04
+ 3.32201778e-04 1.11474099e-04 2.36080993e-04 3.22143730e-04
+ 2.22246099e-04 1.26101066e-04 5.56662588e-05]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+model: :::::::
+<class 'prospect.models.sedmodel.SedModel'>
+
+Free Parameters: (name: prior) 
+-----------
+  mass: <class 'prospect.models.priors.LogUniform'>(mini=100000000.0,maxi=10000000000000.0)
+  logzsol: <class 'prospect.models.priors.TopHat'>(mini=-2.0,maxi=0.5)
+  dust2: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
+  tage: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=14)
+  tau: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=50)
+  duste_umin: <class 'prospect.models.priors.TopHat'>(mini=0.1,maxi=25.0)
+  duste_qpah: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
+  duste_gamma: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=1.0)
+  dust1: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
+  dust_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
+  dust1_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
+
+Fixed Parameters: (name: value [, depends_on]) 
+-----------
+  zred: [0.] 
+  sfh: [4] 
+  imf_type: [1] 
+  dust_type: [0] 
+  lumdist: [100] 
+  add_dust_emission: [ True] 
+number of walkers=256
+done burn #0 (16 iterations)
+done burn #1 (32 iterations)
+done burn #2 (64 iterations)
+number of walkers=256
+starting production
+done production
+done fitting
+fit file written
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+N is 524288
+max percentile 82.33461380004883
+max percentile 41.4738655090332
+max percentile 62.82815933227539
+max percentile 76.7878532409668
+max percentile 74.65677261352539
+max percentile 53.383541107177734
+max percentile 7.772541046142578
+max percentile 13.497447967529297
+max percentile 64.7334098815918
+max percentile 52.70109176635742
+max percentile 74.70254898071289
+Maximum posterior probability parameters: 
+mass 187719015872.55597
+logzsol -0.026069124805682103
+dust2 2.17425418864794
+tage 13.678394744409704
+tau 1.9539613364614068
+duste_umin 2.8630294458666636
+duste_qpah 0.0005720998898930546
+duste_gamma 1.2133084469407594e-05
+dust1 0.9855860268132584
+dust_index -0.46885558524442394
+dust1_index 3.6489696643441527
+The code has started
+Using DustPedia
+SKIRT generated SED already exists
+starting fit
+Time to get SKIRT SED: 0:00:00.004162
+made it to the end of inc0
+/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
+/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
+/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
+maggies [1.17677438e-08 3.33628668e-08 4.66843352e-08 5.37868892e-08
+ 6.41427313e-08 3.19871549e-09 4.30599122e-09 7.55239200e-08
+ 7.42562962e-08 4.86027823e-08 2.75830487e-08 1.39860681e-08
+ 3.00635171e-09 8.41326842e-10 2.53931407e-08 1.53309785e-08
+ 1.01221391e-08 5.94926656e-09 8.28528343e-10 1.58340258e-07
+ 1.08685281e-06 1.58170343e-07 3.80655552e-07 1.12194455e-06
+ 1.57815553e-06 1.27182218e-06 7.06913725e-07]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+model: :::::::
+<class 'prospect.models.sedmodel.SedModel'>
+
+Free Parameters: (name: prior) 
+-----------
+  mass: <class 'prospect.models.priors.LogUniform'>(mini=100000000.0,maxi=10000000000000.0)
+  logzsol: <class 'prospect.models.priors.TopHat'>(mini=-2.0,maxi=0.5)
+  dust2: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
+  tage: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=14)
+  tau: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=50)
+  duste_umin: <class 'prospect.models.priors.TopHat'>(mini=0.1,maxi=25.0)
+  duste_qpah: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
+  duste_gamma: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=1.0)
+  dust1: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
+  dust_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
+  dust1_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
+
+Fixed Parameters: (name: value [, depends_on]) 
+-----------
+  zred: [0.] 
+  sfh: [4] 
+  imf_type: [1] 
+  dust_type: [0] 
+  lumdist: [100] 
+  add_dust_emission: [ True] 
+number of walkers=256
+done burn #0 (16 iterations)
+done burn #1 (32 iterations)
+done burn #2 (64 iterations)
+number of walkers=256
+starting production
+done production
+done fitting
+fit file written
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+N is 524288
+max percentile 94.80762481689453
+max percentile 31.597518920898438
+max percentile 90.39287567138672
+max percentile 96.67034149169922
+max percentile 57.981109619140625
+max percentile 55.828094482421875
+max percentile 5.7102203369140625
+max percentile 2.3008346557617188
+max percentile 17.44403839111328
+max percentile 74.38468933105469
+max percentile 98.9725112915039
+Maximum posterior probability parameters: 
+mass 41415804931.27241
+logzsol -0.18454693217984808
+dust2 1.219902436793723
+tage 13.929883095646307
+tau 2.0422149170347916
+duste_umin 0.7838064199957663
+duste_qpah 0.0011272713821648883
+duste_gamma 5.6933449534224036e-06
+dust1 0.31935572345196395
+dust_index -0.529732487607507
+dust1_index 4.944984675169998
+The code has started
+Using DustPedia
+SKIRT generated SED already exists
+starting fit
+Time to get SKIRT SED: 0:00:00.009604
+made it to the end of inc0
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+N is 524288
+max percentile 77.91872024536133
+max percentile 15.269184112548828
+max percentile 83.27932357788086
+max percentile 95.19948959350586
+max percentile 96.47626876831055
+max percentile 8.144664764404297
+max percentile 0.3674507141113281
+max percentile 13.574504852294922
+max percentile 90.0517463684082
+max percentile 31.856250762939453
+max percentile 90.74411392211914
+Maximum posterior probability parameters: 
+mass 861123149.7666506
+logzsol -1.702176378847398
+dust2 0.002383474492090778
+tage 13.619895035935912
+tau 2.367363620844236
+duste_umin 1.4830943344097594
+duste_qpah 0.001015803546331039
+duste_gamma 4.264789551829912e-05
+dust1 0.28384289046867794
+dust_index -0.6071179436602613
+dust1_index 4.524715695829144
+The code has started
+Using DustPedia
+SKIRT generated SED already exists
+starting fit
+Time to get SKIRT SED: 0:00:00.002943
+made it to the end of inc0
+/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
+/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
+/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
+maggies [2.32074918e-07 8.43531548e-07 1.46300806e-06 1.97132698e-06
+ 2.89375714e-06 4.83839527e-08 5.97958996e-08 4.34509219e-06
+ 5.30687561e-06 4.14222120e-06 2.72395175e-06 1.54767974e-06
+ 1.48024634e-06 1.24398041e-05 2.61852150e-06 1.68839439e-06
+ 1.16904013e-06 6.93305346e-07 1.55462911e-05 3.83563782e-04
+ 1.07923501e-03 3.84906067e-04 7.48651132e-04 1.04815971e-03
+ 7.38238060e-04 4.10062016e-04 1.74383269e-04]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
 redshift is  0.0
 applying luminosity distance 100
 applying dust parameters
@@ -505,10 +709,20 @@ fit file written
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [1.21452478e-07 5.29035643e-07 1.03513909e-06 1.46328517e-06
- 2.26135975e-06 1.29367797e-08 2.02562283e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
+maggies [5.46378469e-07 2.17426086e-06 3.96771002e-06 5.42917988e-06
+ 8.11997962e-06 5.24189517e-08 8.94993721e-08 1.24239757e-05
+ 1.57658031e-05 1.28519455e-05 9.43411731e-06 6.10914344e-06
+ 4.30259721e-06 2.78184352e-05 9.32140733e-06 6.57414203e-06
+ 4.92943808e-06 2.82478350e-06 3.61241282e-05 1.98780709e-03
+ 3.76666657e-03 2.00518341e-03 3.35252163e-03 3.63082380e-03
+ 2.14096582e-03 1.09997801e-03 4.45795363e-04]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
 redshift is  0.0
 applying luminosity distance 100
 applying dust parameters
@@ -552,443 +766,20 @@ fit file written
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [8.70327445e-08 3.85562722e-07 7.62397237e-07 1.08279022e-06
- 1.67552896e-06 6.50308478e-09 1.18121296e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-model: :::::::
-<class 'prospect.models.sedmodel.SedModel'>
-
-Free Parameters: (name: prior) 
------------
-  mass: <class 'prospect.models.priors.LogUniform'>(mini=100000000.0,maxi=10000000000000.0)
-  logzsol: <class 'prospect.models.priors.TopHat'>(mini=-2.0,maxi=0.5)
-  dust2: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  tage: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=14)
-  tau: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=50)
-  duste_umin: <class 'prospect.models.priors.TopHat'>(mini=0.1,maxi=25.0)
-  duste_qpah: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  duste_gamma: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=1.0)
-  dust1: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  dust_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-  dust1_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-
-Fixed Parameters: (name: value [, depends_on]) 
------------
-  zred: [0.] 
-  sfh: [4] 
-  imf_type: [1] 
-  dust_type: [0] 
-  lumdist: [100] 
-  add_dust_emission: [ True] 
-number of walkers=256
-done burn #0 (16 iterations)
-done burn #1 (32 iterations)
-done burn #2 (64 iterations)
-number of walkers=256
-starting production
-done production
-done fitting
-fit file written
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 3.315448760986328
-max percentile 94.4131851196289
-max percentile 21.439361572265625
-max percentile 2.1715164184570312
-max percentile 1.2907028198242188
-max percentile 17.878150939941406
-max percentile 35.10417938232422
-max percentile 67.41323471069336
-max percentile 32.65562057495117
-max percentile 61.360740661621094
-max percentile 80.78718185424805
-Maximum posterior probability parameters: 
-mass 38854857969.04413
-logzsol 0.22299591416782072
-dust2 1.9328649687972879
-tage 2.5245657337419445
-tau 0.32176074504799296
-duste_umin 4.13741930106796
-duste_qpah 3.3189771733841305
-duste_gamma 0.6783221685347451
-dust1 0.9428473990973507
-dust_index -0.3845007785592073
-dust1_index 1.5373014129582139
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.002798
-made it to the end of inc20
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [1.09853222e-07 4.81573229e-07 9.45306748e-07 1.33808834e-06
- 2.06857077e-06 1.04952949e-08 1.71240040e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-model: :::::::
-<class 'prospect.models.sedmodel.SedModel'>
-
-Free Parameters: (name: prior) 
------------
-  mass: <class 'prospect.models.priors.LogUniform'>(mini=100000000.0,maxi=10000000000000.0)
-  logzsol: <class 'prospect.models.priors.TopHat'>(mini=-2.0,maxi=0.5)
-  dust2: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  tage: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=14)
-  tau: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=50)
-  duste_umin: <class 'prospect.models.priors.TopHat'>(mini=0.1,maxi=25.0)
-  duste_qpah: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  duste_gamma: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=1.0)
-  dust1: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  dust_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-  dust1_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-
-Fixed Parameters: (name: value [, depends_on]) 
------------
-  zred: [0.] 
-  sfh: [4] 
-  imf_type: [1] 
-  dust_type: [0] 
-  lumdist: [100] 
-  add_dust_emission: [ True] 
-number of walkers=256
-done burn #0 (16 iterations)
-done burn #1 (32 iterations)
-done burn #2 (64 iterations)
-number of walkers=256
-starting production
-done production
-done fitting
-fit file written
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 0.4595756530761719
-max percentile 96.13761901855469
-max percentile 6.764793395996094
-max percentile 1.3733863830566406
-max percentile 0.6312370300292969
-max percentile 35.520267486572266
-max percentile 61.194515228271484
-max percentile 3.980731964111328
-max percentile 45.39518356323242
-max percentile 51.11074447631836
-max percentile 81.62364959716797
-Maximum posterior probability parameters: 
-mass 35942631000.61116
-logzsol 0.274816923330375
-dust2 1.5850718426345844
-tage 2.96061016525565
-tau 0.4098284585338291
-duste_umin 7.401354375325439
-duste_qpah 6.0359541962869905
-duste_gamma 0.041333064225839156
-dust1 1.3045342022819773
-dust_index -0.46746577619441365
-dust1_index 0.8385293172173833
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.001875
-made it to the end of inc25
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 9.379434585571289
-max percentile 95.83563804626465
-max percentile 29.307985305786133
-max percentile 3.552865982055664
-max percentile 2.2211551666259766
-max percentile 72.47300148010254
-max percentile 19.975900650024414
-max percentile 79.68029975891113
-max percentile 97.80821800231934
-max percentile 52.18644142150879
-max percentile 95.84774971008301
-Maximum posterior probability parameters: 
-mass 50532865250.46912
-logzsol 0.4334056040974744
-dust2 1.2693079771935551
-tage 3.3754340126605378
-tau 0.45279268309206855
-duste_umin 17.50161611884968
-duste_qpah 1.8888315905308088
-duste_gamma 0.8044747103204473
-dust1 9.348996399545978
-dust_index -0.40472718619908543
-dust1_index 3.9868993952259886
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.003902
-made it to the end of inc55
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 6.201171875
-max percentile 97.137451171875
-max percentile 25.701427459716797
-max percentile 1.9173622131347656
-max percentile 1.7325401306152344
-max percentile 76.62191390991211
-max percentile 9.256267547607422
-max percentile 81.60362243652344
-max percentile 53.88603210449219
-max percentile 45.65925598144531
-max percentile 64.42718505859375
-Maximum posterior probability parameters: 
-mass 40133110590.80934
-logzsol 0.36750364114548373
-dust2 1.4585651938382842
-tage 3.0663383856129496
-tau 0.4042859145191845
-duste_umin 19.311160479030384
-duste_qpah 0.8920295202565969
-duste_gamma 0.8350170867833461
-dust1 1.2499509546423364
-dust_index -0.4353885946915773
-dust1_index 1.2295960248475017
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.003771
-made it to the end of inc30
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [9.49167519e-08 4.20586118e-07 8.30506780e-07 1.17856652e-06
- 1.82322475e-06 7.38984208e-09 1.31566925e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-model: :::::::
-<class 'prospect.models.sedmodel.SedModel'>
-
-Free Parameters: (name: prior) 
------------
-  mass: <class 'prospect.models.priors.LogUniform'>(mini=100000000.0,maxi=10000000000000.0)
-  logzsol: <class 'prospect.models.priors.TopHat'>(mini=-2.0,maxi=0.5)
-  dust2: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  tage: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=14)
-  tau: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=50)
-  duste_umin: <class 'prospect.models.priors.TopHat'>(mini=0.1,maxi=25.0)
-  duste_qpah: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  duste_gamma: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=1.0)
-  dust1: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  dust_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-  dust1_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-
-Fixed Parameters: (name: value [, depends_on]) 
------------
-  zred: [0.] 
-  sfh: [4] 
-  imf_type: [1] 
-  dust_type: [0] 
-  lumdist: [100] 
-  add_dust_emission: [ True] 
-number of walkers=256
-done burn #0 (16 iterations)
-done burn #1 (32 iterations)
-done burn #2 (64 iterations)
-number of walkers=256
-starting production
-done production
-done fitting
-fit file written
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 18.176603317260742
-max percentile 91.42136573791504
-max percentile 49.58939552307129
-max percentile 0.4157543182373047
-max percentile 0.37369728088378906
-max percentile 97.61233329772949
-max percentile 40.23776054382324
-max percentile 44.38605308532715
-max percentile 97.91855812072754
-max percentile 65.83590507507324
-max percentile 95.13535499572754
-Maximum posterior probability parameters: 
-mass 88599041703.24991
-logzsol 0.23701735414117706
-dust2 2.278448698828691
-tage 2.728333989753137
-tau 0.38343814649694385
-duste_umin 24.41338772524269
-duste_qpah 4.502560193165575
-duste_gamma 0.4433784446784862
-dust1 9.62176143066397
-dust_index -0.33601809304528346
-dust1_index 3.6773098841095386
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.002772
-made it to the end of inc45
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 11.223602294921875
-max percentile 93.79940032958984
-max percentile 34.31253433227539
-max percentile 1.3213157653808594
-max percentile 0.9038925170898438
-max percentile 57.04374313354492
-max percentile 19.135665893554688
-max percentile 22.446823120117188
-max percentile 38.07220458984375
-max percentile 63.93146514892578
-max percentile 71.58946990966797
-Maximum posterior probability parameters: 
-mass 64594131462.95099
-logzsol 0.29381283742301884
-dust2 1.960011954761204
-tage 2.860252243297913
-tau 0.3742638306053107
-duste_umin 14.02762184038042
-duste_qpah 2.132733752415759
-duste_gamma 0.17860089167786874
-dust1 1.600738404194268
-dust_index -0.31917342189456266
-dust1_index 1.4732287499103907
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.002852
-made it to the end of inc35
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [1.27648804e-07 5.60269234e-07 1.09810503e-06 1.55424721e-06
- 2.40343448e-06 1.25980149e-08 2.03979539e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-model: :::::::
-<class 'prospect.models.sedmodel.SedModel'>
-
-Free Parameters: (name: prior) 
------------
-  mass: <class 'prospect.models.priors.LogUniform'>(mini=100000000.0,maxi=10000000000000.0)
-  logzsol: <class 'prospect.models.priors.TopHat'>(mini=-2.0,maxi=0.5)
-  dust2: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  tage: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=14)
-  tau: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=50)
-  duste_umin: <class 'prospect.models.priors.TopHat'>(mini=0.1,maxi=25.0)
-  duste_qpah: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  duste_gamma: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=1.0)
-  dust1: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  dust_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-  dust1_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-
-Fixed Parameters: (name: value [, depends_on]) 
------------
-  zred: [0.] 
-  sfh: [4] 
-  imf_type: [1] 
-  dust_type: [0] 
-  lumdist: [100] 
-  add_dust_emission: [ True] 
-number of walkers=256
-done burn #0 (16 iterations)
-done burn #1 (32 iterations)
-done burn #2 (64 iterations)
-number of walkers=256
-starting production
-done production
-done fitting
-fit file written
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 5.991363525390625
-max percentile 99.76511001586914
-max percentile 33.2341194152832
-max percentile 0.8219718933105469
-max percentile 1.0866165161132812
-max percentile 64.55926895141602
-max percentile 64.90459442138672
-max percentile 81.18762969970703
-max percentile 79.22992706298828
-max percentile 40.892601013183594
-max percentile 74.8159408569336
-Maximum posterior probability parameters: 
-mass 44717510498.36837
-logzsol 0.4957643555782245
-dust2 1.2543860430609803
-tage 2.8712773651708003
-tau 0.4151751670949455
-duste_umin 16.29535834361144
-duste_qpah 6.414233584743625
-duste_gamma 0.7825388152738852
-dust1 4.017311728187627
-dust_index -0.5095106986192566
-dust1_index 1.9179425962992243
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.001977
-made it to the end of inc65
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [1.16178813e-07 5.06637520e-07 9.92207435e-07 1.40327797e-06
- 2.16867916e-06 1.20521508e-08 1.90555388e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
+maggies [5.21928351e-08 2.06106778e-07 3.68284923e-07 4.92395621e-07
+ 6.91878528e-07 4.05883699e-09 7.59377591e-09 9.96900500e-07
+ 1.18433618e-06 9.10575292e-07 6.15144735e-07 3.42795130e-07
+ 4.99557634e-07 5.53904474e-06 5.85826919e-07 3.74393300e-07
+ 2.59410584e-07 1.53033203e-07 6.92963432e-06 1.43513964e-04
+ 3.06782699e-04 1.44358233e-04 2.48190144e-04 2.96288289e-04
+ 1.84768591e-04 9.62605794e-05 3.92755610e-05]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
 redshift is  0.0
 applying luminosity distance 100
 applying dust parameters
@@ -1032,10 +823,20 @@ fit file written
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [1.34871426e-07 5.94527041e-07 1.16575937e-06 1.65110559e-06
- 2.55505685e-06 1.28183095e-08 2.10894985e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
+maggies [1.33055089e-07 6.32292790e-07 1.28934405e-06 1.84523590e-06
+ 2.88153505e-06 7.23245520e-09 1.33913214e-08 4.74938806e-06
+ 6.37626168e-06 5.52988310e-06 4.66577259e-06 3.45867183e-06
+ 3.20819463e-06 1.89063195e-05 4.74470034e-06 3.67385859e-06
+ 2.99168909e-06 1.71673386e-06 2.49628196e-05 1.55396438e-03
+ 3.08460079e-03 1.56632046e-03 2.76675646e-03 2.95845548e-03
+ 1.58615740e-03 7.48026105e-04 2.81013264e-04]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
 redshift is  0.0
 applying luminosity distance 100
 applying dust parameters
@@ -1076,13 +877,167 @@ starting production
 done production
 done fitting
 fit file written
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+N is 524288
+max percentile 89.6108627319336
+max percentile 54.700660705566406
+max percentile 80.55458068847656
+max percentile 69.02847290039062
+max percentile 57.89356231689453
+max percentile 66.78619384765625
+max percentile 7.6030731201171875
+max percentile 38.16490173339844
+max percentile 81.01463317871094
+max percentile 82.51914978027344
+max percentile 64.62154388427734
+Maximum posterior probability parameters: 
+mass 95768250469.63982
+logzsol -0.37895691625431044
+dust2 1.1649950317569628
+tage 12.670129987171435
+tau 2.472109566983729
+duste_umin 1.0799806019673708
+duste_qpah 0.0004508390114543455
+duste_gamma 0.0005155778468958755
+dust1 5.789165910048436
+dust_index -0.4351922701449472
+dust1_index 2.561334939815536
+The code has started
+Using DustPedia
+SKIRT generated SED already exists
+starting fit
+Time to get SKIRT SED: 0:00:00.005348
+made it to the end of inc0
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+N is 524288
+max percentile 76.36537551879883
+max percentile 69.43159103393555
+max percentile 79.13999557495117
+max percentile 42.652225494384766
+max percentile 27.411174774169922
+max percentile 60.34345626831055
+max percentile 5.141544342041016
+max percentile 10.861873626708984
+max percentile 23.808765411376953
+max percentile 88.16194534301758
+max percentile 87.67824172973633
+Maximum posterior probability parameters: 
+mass 392732260376.34766
+logzsol -0.2502374101972869
+dust2 1.5199115748791439
+tage 10.07979937545399
+tau 1.4878127317758245
+duste_umin 1.8027547471555494
+duste_qpah 0.0002915012685318165
+duste_gamma 1.5707846706681314e-05
+dust1 0.6473679704870656
+dust_index -0.4032666582359197
+dust1_index 4.253115581148189
+The code has started
+Using DustPedia
+SKIRT generated SED already exists
+starting fit
+Time to get SKIRT SED: 0:00:00.005834
+made it to the end of inc0
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+N is 524288
+max percentile 33.83073806762695
+max percentile 11.429882049560547
+max percentile 51.636409759521484
+max percentile 50.96006393432617
+max percentile 77.08024978637695
+max percentile 28.61013412475586
+max percentile 5.995655059814453
+max percentile 4.729557037353516
+max percentile 71.79784774780273
+max percentile 18.63851547241211
+max percentile 49.76472854614258
+Maximum posterior probability parameters: 
+mass 24243110487.13888
+logzsol -1.0128809601481752
+dust2 1.5213546960260809
+tage 10.09988361700294
+tau 1.7037609001664646
+duste_umin 1.7332553469755416
+duste_qpah 0.00021466126773399545
+duste_gamma 9.717438422629206e-05
+dust1 5.363753629511685
+dust_index -0.5572057561254992
+dust1_index 2.154377410611919
+The code has started
+Using DustPedia
+SKIRT generated SED already exists
+starting fit
+Time to get SKIRT SED: 0:00:00.002741
+made it to the end of inc0
+redshift is  0.0
+applying luminosity distance 100
+applying dust parameters
+adding dust emission
+dust type set by config file: 0
+in the dust_type=0 if statement
+N is 524288
+max percentile 69.10924911499023
+max percentile 68.1248664855957
+max percentile 89.89343643188477
+max percentile 36.45524978637695
+max percentile 29.618549346923828
+max percentile 64.73798751831055
+max percentile 2.966594696044922
+max percentile 2.453327178955078
+max percentile 46.11940383911133
+max percentile 74.78265762329102
+max percentile 61.34481430053711
+Maximum posterior probability parameters: 
+mass 281203369790.406
+logzsol -0.12347526187364626
+dust2 2.352961077608848
+tage 9.186019090431857
+tau 1.2689819665342768
+duste_umin 2.2933484664291246
+duste_qpah 0.0002275032857362285
+duste_gamma 3.6109097370126382e-06
+dust1 0.9430799429208641
+dust_index -0.40132034980820713
+dust1_index 2.519218332121661
+The code has started
+Using DustPedia
+SKIRT generated SED already exists
+starting fit
+Time to get SKIRT SED: 0:00:00.004225
+made it to the end of inc0
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [1.02734148e-07 4.53171273e-07 8.92234546e-07 1.26449097e-06
- 1.95538746e-06 8.80842049e-09 1.50114350e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
+maggies [7.11460155e-08 2.88507555e-07 5.47595571e-07 7.61245027e-07
+ 1.13185238e-06 1.27088944e-08 1.43483996e-08 1.77312531e-06
+ 2.28068812e-06 1.89089505e-06 1.40704348e-06 8.56587191e-07
+ 1.07995045e-06 8.79561189e-06 1.37291340e-06 9.28625054e-07
+ 6.70298428e-07 3.97219307e-07 1.10731289e-05 3.00165550e-04
+ 6.97388000e-04 3.01776643e-04 5.52878491e-04 6.72645459e-04
+ 4.13341787e-04 2.12057533e-04 8.53726794e-05]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
 redshift is  0.0
 applying luminosity distance 100
 applying dust parameters
@@ -1129,77 +1084,53 @@ applying dust parameters
 adding dust emission
 dust type set by config file: 0
 in the dust_type=0 if statement
-N is 1048576
-max percentile 0.5383491516113281
-max percentile 97.2829818725586
-max percentile 13.535594940185547
-max percentile 2.0984649658203125
-max percentile 1.9483566284179688
-max percentile 95.09849548339844
-max percentile 37.017154693603516
-max percentile 15.876197814941406
-max percentile 77.93340682983398
-max percentile 12.04061508178711
-max percentile 86.87238693237305
+N is 524288
+max percentile 47.029972076416016
+max percentile 40.95582962036133
+max percentile 47.24264144897461
+max percentile 57.26003646850586
+max percentile 74.79829788208008
+max percentile 53.95212173461914
+max percentile 17.39053726196289
+max percentile 29.520511627197266
+max percentile 91.83664321899414
+max percentile 33.81204605102539
+max percentile 58.804988861083984
 Maximum posterior probability parameters: 
-mass 33009352469.974304
-logzsol 0.4529885570882112
-dust2 0.9197645142358957
-tage 3.2863411866268626
-tau 0.4547221114024096
-duste_umin 23.804096905871774
-duste_qpah 3.7700965095844747
-duste_gamma 0.17407957106200134
-dust1 4.374903344552642
-dust_index -0.5896891930777979
-dust1_index 3.211800353558674
+mass 54603807363.423225
+logzsol -0.23949726525431675
+dust2 1.6535587163307726
+tage 11.630123555432274
+tau 2.2987481754712364
+duste_umin 1.7561696056900031
+duste_qpah 0.0009330316409972067
+duste_gamma 0.0007748044888578407
+dust1 9.158265733499901
+dust_index -0.4449554224118562
+dust1_index 2.64430860473427
 The code has started
-Using GWSLC1
+Using DustPedia
 SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.002826
-made it to the end of inc50
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 4.79884147644043
-max percentile 98.1046199798584
-max percentile 29.459810256958008
-max percentile 1.0187625885009766
-max percentile 0.9712696075439453
-max percentile 70.41144371032715
-max percentile 64.03384208679199
-max percentile 2.476930618286133
-max percentile 35.53977012634277
-max percentile 34.86638069152832
-max percentile 69.60759162902832
-Maximum posterior probability parameters: 
-mass 42266050004.48724
-logzsol 0.46876498494596164
-dust2 1.0449089976365866
-tage 3.086382599068809
-tau 0.4144060525088069
-duste_umin 17.872209128412305
-duste_qpah 6.5133304403275325
-duste_gamma 0.028316092135595383
-dust1 0.9709263953384683
-dust_index -0.5141663577391817
-dust1_index 1.3080502000170258
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.002635
-made it to the end of inc85
+starting fit
+Time to get SKIRT SED: 0:00:00.006476
+made it to the end of inc0
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [1.29534703e-07 5.71075781e-07 1.12055523e-06 1.58717674e-06
- 2.45525607e-06 1.21568017e-08 2.01166223e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
+maggies [3.19721030e-07 1.02685814e-06 1.52671082e-06 1.88010264e-06
+ 2.49004338e-06 4.85777844e-08 8.10233762e-08 3.33121379e-06
+ 3.75076671e-06 2.80847092e-06 1.83546307e-06 1.00611650e-06
+ 2.80148194e-06 3.67684162e-05 1.73006311e-06 1.09785783e-06
+ 7.54515866e-07 4.59712519e-07 4.62183736e-05 8.14565796e-04
+ 1.29468355e-03 8.21101263e-04 1.25512510e-03 1.24338718e-03
+ 6.62459994e-04 3.14783946e-04 1.20451277e-04]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
 redshift is  0.0
 applying luminosity distance 100
 applying dust parameters
@@ -1246,42 +1177,53 @@ applying dust parameters
 adding dust emission
 dust type set by config file: 0
 in the dust_type=0 if statement
-N is 1048576
-max percentile 1.0587215423583984
-max percentile 93.38374137878418
-max percentile 14.92466926574707
-max percentile 2.6031017303466797
-max percentile 2.496194839477539
-max percentile 94.65680122375488
-max percentile 66.17741584777832
-max percentile 18.07417869567871
-max percentile 67.29121208190918
-max percentile 10.04185676574707
-max percentile 85.91170310974121
+N is 524288
+max percentile 34.677791595458984
+max percentile 22.209644317626953
+max percentile 52.2557258605957
+max percentile 20.11880874633789
+max percentile 30.722904205322266
+max percentile 32.54384994506836
+max percentile 10.935688018798828
+max percentile 1.8488883972167969
+max percentile 94.71712112426758
+max percentile 9.569072723388672
+max percentile 85.85119247436523
 Maximum posterior probability parameters: 
-mass 33407885360.948288
-logzsol 0.3713492641508349
-dust2 1.088525062008062
-tage 3.1909592332664936
-tau 0.4271093339050846
-duste_umin 23.633039833954147
-duste_qpah 6.625551179021035
-duste_gamma 0.1676993157712201
-dust1 2.5875699520615782
-dust_index -0.5550583786593052
-dust1_index 2.963525335426998
+mass 39282389535.59129
+logzsol -1.3140736996951294
+dust2 1.365977463755482
+tage 4.543635413790913
+tau 1.0124467295017858
+duste_umin 3.4317124871086784
+duste_qpah 0.0002930673817922058
+duste_gamma 3.6661297722373297e-06
+dust1 5.189190154468504
+dust_index -0.5835072088729155
+dust1_index 1.588701078806655
 The code has started
-Using GWSLC1
+Using DustPedia
 SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.001931
-made it to the end of inc40
+starting fit
+Time to get SKIRT SED: 0:00:00.006241
+made it to the end of inc0
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [1.31582128e-07 5.80747124e-07 1.13961283e-06 1.61454113e-06
- 2.49816935e-06 1.21973405e-08 2.03001776e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
+maggies [1.95614005e-08 4.53605809e-08 5.89869690e-08 6.61245597e-08
+ 7.71913445e-08 9.38247350e-09 1.00499922e-08 8.86623547e-08
+ 8.46242115e-08 5.49588135e-08 3.11138835e-08 1.59190655e-08
+ 4.94805782e-09 4.66663435e-08 2.86341791e-08 1.74313487e-08
+ 1.14534995e-08 6.65060442e-09 6.19066914e-08 1.50036113e-06
+ 4.34728678e-06 1.50637241e-06 2.69250018e-06 4.31389607e-06
+ 4.02974352e-06 2.71078999e-06 1.36607024e-06]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
 redshift is  0.0
 applying luminosity distance 100
 applying dust parameters
@@ -1328,77 +1270,53 @@ applying dust parameters
 adding dust emission
 dust type set by config file: 0
 in the dust_type=0 if statement
-N is 1048576
-max percentile 3.2335281372070312
-max percentile 89.776611328125
-max percentile 20.32480239868164
-max percentile 5.54656982421875
-max percentile 5.327129364013672
-max percentile 50.28419494628906
-max percentile 18.745708465576172
-max percentile 45.97282409667969
-max percentile 77.20861434936523
-max percentile 10.58664321899414
-max percentile 79.49047088623047
+N is 524288
+max percentile 62.42666244506836
+max percentile 31.005001068115234
+max percentile 96.70286178588867
+max percentile 64.6967887878418
+max percentile 83.98370742797852
+max percentile 22.90945053100586
+max percentile 1.4576911926269531
+max percentile 9.27877426147461
+max percentile 48.84042739868164
+max percentile 56.66399002075195
+max percentile 86.62309646606445
 Maximum posterior probability parameters: 
-mass 37410873227.625404
-logzsol 0.37063240271537307
-dust2 0.8465789847551961
-tage 3.769236121327287
-tau 0.5193393136693499
-duste_umin 12.072469458637455
-duste_qpah 2.1524505411815555
-duste_gamma 0.4597599628864161
-dust1 3.447000910422405
-dust_index -0.6073947135947925
-dust1_index 2.0350595674006917
+mass 758938683.9032546
+logzsol -1.646071316652611
+dust2 0.13587024564316577
+tage 9.92289364557773
+tau 2.498067461438332
+duste_umin 0.4372529989679575
+duste_qpah 8.25145194751878e-05
+duste_gamma 2.2409715656500513e-05
+dust1 0.19212066391545765
+dust_index -0.22644925821514544
+dust1_index 0.6662159886364618
 The code has started
-Using GWSLC1
+Using DustPedia
 SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.002394
-made it to the end of inc70
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 7.728433609008789
-max percentile 92.98386573791504
-max percentile 31.261491775512695
-max percentile 2.8063297271728516
-max percentile 2.391386032104492
-max percentile 9.604501724243164
-max percentile 72.66659736633301
-max percentile 94.90017890930176
-max percentile 66.28365516662598
-max percentile 35.71505546569824
-max percentile 79.94027137756348
-Maximum posterior probability parameters: 
-mass 50961778888.046906
-logzsol 0.3718576298795621
-dust2 1.2336972150917953
-tage 3.2343388850809935
-tau 0.4240543230637277
-duste_umin 2.639593669115527
-duste_qpah 7.2146586884085835
-duste_gamma 0.9566497533001419
-dust1 2.237171645433156
-dust_index -0.4428563043749839
-dust1_index 2.9008798543838425
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.001935
-made it to the end of inc75
+starting fit
+Time to get SKIRT SED: 0:00:00.005729
+made it to the end of inc0
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
 /ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [1.25321030e-07 5.46974666e-07 1.07057896e-06 1.51395893e-06
- 2.33997751e-06 1.31168688e-08 2.07198136e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
+maggies [1.19852745e-07 3.91997368e-07 5.99026136e-07 7.29862039e-07
+ 9.25449565e-07 2.07204100e-08 3.20236610e-08 1.16980676e-06
+ 1.23119624e-06 8.53173741e-07 5.12248166e-07 2.62872456e-07
+ 7.16313089e-08 2.48462744e-07 4.75231821e-07 2.88522731e-07
+ 1.92902679e-07 1.13842229e-07 3.25121861e-07 2.01610852e-05
+ 1.00740135e-04 2.00910541e-05 4.88511005e-05 9.95470404e-05
+ 9.11422382e-05 5.70170282e-05 2.62193357e-05]
+effective wavelengths [3.54600064e+03 4.66959394e+03 6.15568605e+03 7.47157139e+03
+ 8.91739872e+03 1.52805975e+03 2.27112579e+03 1.23198415e+04
+ 1.64200412e+04 2.15670847e+04 3.34610204e+04 4.59520898e+04
+ 1.15526289e+05 2.20783489e+05 3.53785101e+04 4.47805510e+04
+ 5.69621966e+04 7.79802047e+04 2.34336490e+05 6.98648530e+05
+ 1.54271179e+06 7.00164875e+05 9.96011312e+05 1.58578825e+06
+ 2.50451650e+06 3.51377925e+06 5.07849300e+06]
 redshift is  0.0
 applying luminosity distance 100
 applying dust parameters
@@ -1445,114 +1363,34 @@ applying dust parameters
 adding dust emission
 dust type set by config file: 0
 in the dust_type=0 if statement
-N is 1048576
-max percentile 2.3651599884033203
-max percentile 95.4063892364502
-max percentile 23.79612922668457
-max percentile 3.6280155181884766
-max percentile 3.4863948822021484
-max percentile 80.54051399230957
-max percentile 84.41081047058105
-max percentile 88.9920711517334
-max percentile 84.73210334777832
-max percentile 11.430025100708008
-max percentile 88.09847831726074
+N is 524288
+max percentile 90.96050262451172
+max percentile 14.384841918945312
+max percentile 99.39823150634766
+max percentile 85.5733871459961
+max percentile 70.72601318359375
+max percentile 43.389892578125
+max percentile 27.068710327148438
+max percentile 2.6758193969726562
+max percentile 99.9410629272461
+max percentile 92.09423065185547
+max percentile 13.349533081054688
 Maximum posterior probability parameters: 
-mass 33001484060.948593
-logzsol 0.46192605319120705
-dust2 0.8150843014283009
-tage 3.308407260603933
-tau 0.4475077077724099
-duste_umin 20.084000024140245
-duste_qpah 8.360158695794269
-duste_gamma 0.8813757177017971
-dust1 3.3945052536443434
-dust_index -0.601916873614039
-dust1_index 3.210189261399891
+mass 12944129988.658897
+logzsol -0.8424594374332639
+dust2 0.12103264544758895
+tage 13.24071096186446
+tau 2.424629914750879
+duste_umin 0.20172537828134343
+duste_qpah 0.0036988834872705365
+duste_gamma 2.227713055984022e-06
+dust1 9.984246533663526
+dust_index -0.2451567023030523
+dust1_index -3.4629694937469093
 The code has started
-Using GWSLC1
+Using DustPedia
 SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.001774
-made it to the end of inc60
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/models/priors.py:104: RuntimeWarning: divide by zero encountered in log
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize run_params, pickled instead
-/ext3/miniconda3/lib/python3.8/site-packages/prospect-1.0.0-py3.8.egg/prospect/io/write_results.py:290: RuntimeWarning: Could not JSON serialize model_params, pickled instead
-maggies [1.35254851e-07 5.97213190e-07 1.17146576e-06 1.65942356e-06
- 2.56795759e-06 1.26028020e-08 2.09031763e-08]
-effective wavelengths [3546.00063828 4669.59393552 6155.68605117 7471.57138923 8917.3987151
- 1528.05975153 2271.12579359]
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-model: :::::::
-<class 'prospect.models.sedmodel.SedModel'>
-
-Free Parameters: (name: prior) 
------------
-  mass: <class 'prospect.models.priors.LogUniform'>(mini=100000000.0,maxi=10000000000000.0)
-  logzsol: <class 'prospect.models.priors.TopHat'>(mini=-2.0,maxi=0.5)
-  dust2: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  tage: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=14)
-  tau: <class 'prospect.models.priors.LogUniform'>(mini=0.1,maxi=50)
-  duste_umin: <class 'prospect.models.priors.TopHat'>(mini=0.1,maxi=25.0)
-  duste_qpah: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  duste_gamma: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=1.0)
-  dust1: <class 'prospect.models.priors.TopHat'>(mini=0.0,maxi=10.0)
-  dust_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-  dust1_index: <class 'prospect.models.priors.TopHat'>(mini=-5,maxi=5)
-
-Fixed Parameters: (name: value [, depends_on]) 
------------
-  zred: [0.] 
-  sfh: [4] 
-  imf_type: [1] 
-  dust_type: [0] 
-  lumdist: [100] 
-  add_dust_emission: [ True] 
-number of walkers=256
-done burn #0 (16 iterations)
-done burn #1 (32 iterations)
-done burn #2 (64 iterations)
-number of walkers=256
-starting production
-done production
-done fitting
-fit file written
-redshift is  0.0
-applying luminosity distance 100
-applying dust parameters
-adding dust emission
-dust type set by config file: 0
-in the dust_type=0 if statement
-N is 1048576
-max percentile 0.9964942932128906
-max percentile 94.79303359985352
-max percentile 10.259532928466797
-max percentile 4.105281829833984
-max percentile 3.7270545959472656
-max percentile 45.36638259887695
-max percentile 18.22042465209961
-max percentile 73.47240447998047
-max percentile 47.090816497802734
-max percentile 23.462677001953125
-max percentile 72.30720520019531
-Maximum posterior probability parameters: 
-mass 43197450887.84586
-logzsol 0.387085287320913
-dust2 0.9715126116097806
-tage 3.5964279508424815
-tau 0.4829327567321876
-duste_umin 10.901444585566953
-duste_qpah 1.7715191241231505
-duste_gamma 0.740032047866259
-dust1 1.1211849768899294
-dust_index -0.5476113579624721
-dust1_index 1.8351371412217001
-The code has started
-Using GWSLC1
-SKIRT generated SED already exists
-Time to get SKIRT SED: 0:00:00.002771
-made it to the end of inc90
+starting fit
+Time to get SKIRT SED: 0:00:00.002822
+made it to the end of inc0
+slurmstepd: error: *** JOB 8017515 ON cm20 CANCELLED AT 2021-06-25T09:47:35 ***
