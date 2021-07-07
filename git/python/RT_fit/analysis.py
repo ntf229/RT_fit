@@ -63,6 +63,12 @@ for i in range(len(res['theta_labels'])):
     best_value = "{:.4e}".format(best['parameter'][i]) # write value in scientific notation
     file.write(str(res['theta_labels'][i])+': '+str(best_value)+'\n')
 
+# Calculate average chi-squared error between observed (SKIRT) and model (bestfit) photometry
+chi2 = 0
+for i in range(len(phot)):
+        chi2 += (phot[i] - res['obs']['maggies'][i])**2
+chi2 = chi2 / len(phot)
+    
 a = model.params["zred"] + 1
 
 rfw = np.load('{0}/full_rf_wavelengths.npy'.format(currentPath)) # generated from sdss_bands_test read.py
@@ -97,6 +103,20 @@ np.save('{0}/Analysis/bestfit_spec.npy'.format(args.path),full_spec[mask])
 np.save('{0}/Analysis/bestfit_photometry_wave_eff.npy'.format(args.path),wave_eff)
 np.save('{0}/Analysis/bestfit_photometry_flux.npy'.format(args.path),phot)
 
+# save averaged chi-squared photometry error as text file
+f = open('{0}/Analysis/bestfit_chi2.txt'.format(args.path),"w+")
+f.write(chi2)
+f.close()
 
+# Read bestfit_paramms.txt to get value of mass, tage, and tau
 
+textFile = open(args.path+"/Analysis/bestfit_params.txt', 'r')
+lines = textFile.readlines()
+    for j in range(len(lines)):
+        if lines[j].startswith('mass'):
+            mass = float(lines[j].split('mass: ')[1])
+        elif lines[j].startswith('tage'):
+            age = float(lines[j].split('tage: ')[1]) * 1e9 # convert from Gyr to yr
+        elif lines[j].startswith('tau'):
+            tau = float(lines[j].split('tau: ')[1]) * 1e9 # convert from Gyr to tr 
 

@@ -5,7 +5,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --time=1:00:00
 #SBATCH --mem=20GB
-#SBATCH --job-name=makeTextFiles_g3.23e11_zoomed_out
+#SBATCH --job-name=makeTextFiles_all
 #SBATCH --mail-type=END
 #SBATCH --mail-user=ntf229@nyu.edu
 #SBATCH --output=slurm_out/slurm_%x.out

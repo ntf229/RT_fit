@@ -41,10 +41,10 @@ mainPath=expanduser("~")+"/RT_fit/git"
 resourcePath=home+"/RT_fit/resources/NIHAO/TextFiles/"+args.galaxy
 #projectPath=home+"/RT_fit/projects/"+args.name 
 if args.dust == "True":
-  SKIRTPath=home+"/RT_fit/resources/SKIRT/"+args.galaxy+"/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/niter"+args.niter+"/inc"+args.inc+"/dust"
+  SKIRTPath=home+"/RT_fit/resources/SKIRT/"+args.galaxy+"/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/inc"+args.inc+"/dust"
   projectPath = home+"/RT_fit/projects/"+args.galaxy+"/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/niter"+args.niter+"/inc"+args.inc+"/dust/"+args.fitType+"/walkers"+args.nwalkers  
 else:
-  SKIRTPath=home+"/RT_fit/resources/SKIRT/"+args.galaxy+"/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/niter"+args.niter+"/inc"+args.inc+"/nodust"
+  SKIRTPath=home+"/RT_fit/resources/SKIRT/"+args.galaxy+"/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/inc"+args.inc+"/nodust"
   projectPath = home+"/RT_fit/projects/"+args.galaxy+"/maxLevel"+args.maxLevel+"/wavelengths"+args.wavelengths+"/numPhotons"+args.numPhotons+"/niter"+args.niter+"/inc"+args.inc+"/dust/"+args.fitType+"/walkers"+args.nwalkers
 # create filter_list array from --fitType codename (format: sdss_u0,sdss_g0,sdss_r0,sdss_i0,sdss_z0,galex_FUV,galex_NUV)
 

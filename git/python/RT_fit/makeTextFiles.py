@@ -21,6 +21,7 @@ class galaxy:
 		self.full_y_pos = np.float32(self.data.star['pos'].in_units('pc')[:][:,1])
 		self.full_z_pos = np.float32(self.data.star['pos'].in_units('pc')[:][:,2])
 		self.full_mass = np.float32(self.data.star['massform'].in_units('Msol')[:]) 	# in solar masses	
+		self.full_current_mass = np.float32(self.data.star['mass'].in_units('Msol')[:])
 		self.full_metals = np.float32(self.data.star['metals'][:])
 		self.full_age = np.float32(self.data.star['age'].in_units('yr')[:])
 		self.full_x_vel = np.float32(self.data.star['vel'].in_units('km s**-1')[:][:,0])
@@ -96,6 +97,7 @@ class galaxy:
 		self.y_pos = np.float32(np.delete(self.full_y_pos,self.starIndex))
 		self.z_pos = np.float32(np.delete(self.full_z_pos,self.starIndex))
 		self.mass = np.float32(np.delete(self.full_mass,self.starIndex))
+		self.current_mass = np.float32(np.delete(self.full_current_mass,self.starIndex))
 		self.metals = np.float32(np.delete(self.full_metals,self.starIndex) )
 		self.age = np.float32(np.delete(self.full_age,self.starIndex))
 		self.x_vel = np.float32(np.delete(self.full_x_vel,self.starIndex))
@@ -148,10 +150,10 @@ if __name__=='__main__':
 	start = timer()
 
 	# 16 galaxies selected by hand from the NIHAO Suite
-	#galaxies = ['g1.12e12','g1.92e12','g2.39e11','g2.79e12','g3.23e11','g3.49e11','g3.59e11','g3.61e11','g5.31e11','g5.36e11','g5.38e11','g5.55e11','g7.08e11','g7.44e11','g8.26e11','g8.28e11']
+	galaxies = ['g1.12e12','g1.92e12','g2.39e11','g2.79e12','g3.23e11','g3.49e11','g3.59e11','g3.61e11','g5.31e11','g5.36e11','g5.38e11','g5.55e11','g7.08e11','g7.44e11','g8.26e11','g8.28e11']
 
 	# two galaxies for testing
-	galaxies = ['g3.23e11']
+	#galaxies = ['g3.23e11']
 
 	textPath = '/scratch/ntf229/RT_fit/resources/NIHAO/TextFiles/'
 
@@ -167,6 +169,8 @@ if __name__=='__main__':
 		np.savetxt(textPath+galaxies[i]+'/stars.txt',np.float32(np.c_[g.x_pos, g.y_pos, g.z_pos, g.smooth, g.x_vel, g.y_vel, g.z_vel, g.mass, g.metals, g.age]))
 		np.savetxt(textPath+galaxies[i]+'/gas.txt',np.float32(np.c_[g.x_pos_dust, g.y_pos_dust, g.z_pos_dust, g.smooth_dust, g.mass_dust, g.metals_dust, g.temp_dust]))
 
+		np.savetxt(textPath+galaxies[i]+'/current_mass_stars.txt',np.float32(np.c_[g.current_mass]))
+                
 	end = timer()
 	print('time: ', end - start)
 
